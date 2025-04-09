@@ -98,16 +98,16 @@ int main(void)
   while (1)
   {
 
-	  if (HAL_GPIO_ReadPin(GPIOI, GPIO_PIN_11) == GPIO_PIN_SET)
+	  if (HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_0) == GPIO_PIN_SET)
 	      {
-	          HAL_GPIO_WritePin(GPIOI, GPIO_PIN_1, GPIO_PIN_SET); // Allumer la LED
+	          HAL_GPIO_WritePin(GPIOI, GPIO_PIN_1, GPIO_PIN_SET); // LED ON
 	      }
 	      else
 	      {
-	          HAL_GPIO_WritePin(GPIOI, GPIO_PIN_1, GPIO_PIN_RESET); // Éteindre la LED
+	          HAL_GPIO_WritePin(GPIOI, GPIO_PIN_1, GPIO_PIN_RESET); // LED OFF
 	      }
 
-	      HAL_Delay(10); // Anti-rebond simple
+	      HAL_Delay(10); // anti-rebond basique
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
