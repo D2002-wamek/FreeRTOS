@@ -30,7 +30,7 @@ Création du projet
 Réponse : Core – Src
 
 2. À quoi servent les commentaires indiquant BEGIN et END ?
-Réponse :
+Réponse : Ils permettrent de segmenter le code de manière à ce qu'à chaque régénération de celui ci les codes ajoutés ne soient pas supprimés.
 — HAL_Delay :
 — HAL_GPIO_TogglePin :
 
