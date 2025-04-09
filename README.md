@@ -30,7 +30,7 @@ Création du projet
 Réponse : Core – Src
 
 2. À quoi servent les commentaires indiquant BEGIN et END ?
-Réponse : Ils permettrent de segmenter le code de manière à ce qu'à chaque régénération de celui ci les codes ajoutés ne soient pas supprimés.
+Réponse : Les commentaires /* USER CODE BEGIN */ et /* USER CODE END */ dans les projets STM32 (générés avec STM32CubeMX ou STM32CubeIDE) servent à protéger certaines sections de code que nous écrivons manuellement contre l’écrasement lors des regénérations automatiques du code par l’outil.
 — HAL_Delay :
 — HAL_GPIO_TogglePin :
 
