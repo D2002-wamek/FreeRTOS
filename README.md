@@ -45,6 +45,7 @@ exemple de notre code: HAL_Delay(500); // Attend 500 ms
   les ports dentrées/sorties sont définis dans le fichier: gpio.h
 
 5. Écrivez un programme simple permettant de faire clignoter la LED.
+   
    /* USER CODE BEGIN 2 */
 HAL_GPIO_WritePin(GPIOI, GPIO_PIN_1, GPIO_PIN_RESET);
 /* USER CODE END 2 */
@@ -57,6 +58,7 @@ while (1)
     HAL_Delay(500);
 }
 /* USER CODE END WHILE */
+
 
 6. Modifiez le programme pour que la LED s’allume lorsque le bouton USER est
 appuyé.
@@ -81,4 +83,5 @@ appuyé.
 
 ## 1 FreeRTOS, tâches et sémaphores ##
 # 1.1 Tâche simple #
+
 
