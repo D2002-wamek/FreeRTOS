@@ -31,8 +31,54 @@ Réponse : Core – Src
 
 2. À quoi servent les commentaires indiquant BEGIN et END ?
 Réponse : Les commentaires /* USER CODE BEGIN */ et /* USER CODE END */ dans les projets STM32 (générés avec STM32CubeMX ou STM32CubeIDE) servent à protéger certaines sections de code que nous écrivons manuellement contre l’écrasement lors des regénérations automatiques du code par l’outil.
-— HAL_Delay :
-— HAL_GPIO_TogglePin :
 
+3. Quels sont les paramètres à passer à HAL_Delay et HAL_GPIO_TogglePin ?
+- HAL_GPIO_TogglePin(GPIO_TypeDef* GPIOx, uint16_t GPIO_Pin);
+Cette fonction inverse l’état d’un GPIO de sortie.
+Dans notre code nous avons pris l'exemple suivant: HAL_GPIO_TogglePin(GPIOI, GPIO_PIN_1); // Inverse l'état de la LED
+  
+- HAL_Delay(uint32_t Delay);
+Cette fonction met en pause le programme pendant un certain temps
+exemple de notre code: HAL_Delay(500); // Attend 500 ms
 
+4. Dans quel fichier les ports d’entrée/sorties sont-ils définis ?
+  les ports dentrées/sorties sont définis dans le fichier: gpio.h
+
+5. Écrivez un programme simple permettant de faire clignoter la LED.
+   /* USER CODE BEGIN 2 */
+HAL_GPIO_WritePin(GPIOI, GPIO_PIN_1, GPIO_PIN_RESET);
+/* USER CODE END 2 */
+
+/* Infinite loop */
+/* USER CODE BEGIN WHILE */
+while (1)
+{
+    HAL_GPIO_TogglePin(GPIOI, GPIO_PIN_1);
+    HAL_Delay(500);
+}
+/* USER CODE END WHILE */
+
+6. Modifiez le programme pour que la LED s’allume lorsque le bouton USER est
+appuyé.
+
+ while (1)
+  {
+
+   if (HAL_GPIO_ReadPin(GPIOI, GPIO_PIN_11) == GPIO_PIN_SET)
+       {
+           HAL_GPIO_WritePin(GPIOI, GPIO_PIN_1, GPIO_PIN_SET); // Allumer la LED
+       }
+       else
+       {
+           HAL_GPIO_WritePin(GPIOI, GPIO_PIN_1, GPIO_PIN_RESET); // Éteindre la LED
+       }
+
+       HAL_Delay(10); // Anti-rebond simple
+    /* USER CODE END WHILE */
+
+    /* USER CODE BEGIN 3 */
+  }
+
+## 1 FreeRTOS, tâches et sémaphores ##
+# 1.1 Tâche simple #
 
