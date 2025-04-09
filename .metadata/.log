@@ -1,0 +1,18 @@
+!SESSION 2025-04-09 15:20:07.401 -----------------------------------------------
+eclipse.buildId=Version 1.17.0
+java.version=21.0.3
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=fr_FR
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2025-04-09 15:20:22.796
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2025-04-09 15:20:22.800
+!MESSAGE Log4j2 initialized with config file C:\Users\debor\OneDrive\Desktop\ENSEA\ENSEA_24-25\Semestre_10\Noyau_temps_reel\FreeRTOS\.metadata\.log4j2.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2025-04-09 15:20:27.696
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY org.eclipse.cdt.core 1 0 2025-04-09 15:22:45.718
+!MESSAGE Indexed 'TP_FreeRTOS' (20 sources, 82 headers) in 4.03 sec: 5,516 declarations; 33,524 references; 0 unresolved inclusions; 1 syntax errors; 2 unresolved names (0.0051%)

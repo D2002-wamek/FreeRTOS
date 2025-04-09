@@ -1,0 +1,10 @@
+16:11:40 **** Incremental Build of configuration Debug for project TP_FreeRTOS ****
+make -j16 all 
+arm-none-eabi-size  TP_FreeRTOS.elf 
+   text	   data	    bss	    dec	    hex	filename
+  13076	     12	   1708	  14796	   39cc	TP_FreeRTOS.elf
+Finished building: default.size.stdout
+ 
+
+16:11:41 Build Finished. 0 errors, 0 warnings. (took 420ms)
+
