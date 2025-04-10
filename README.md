@@ -115,4 +115,9 @@ configLIBRARY_MAX_SYSCALL_INTERRUPT_PRIORITY = 5	Protège FreeRTOS des interrupt
 portTICK_PERIOD_MS est une macro utilisée dans FreeRTOS pour convertir une période de temps spécifiée en millisecondes au nombre de ticks du système. Cela permet d'abstraire la durée réelle entre les ticks du système, qui peut varier en fonction de la configuration de FreeRTOS et de la fréquence du processeur.
 L'utilisation de cette macro garantit que le délai spécifié dans vTaskDelay() est indépendant de la configuration du système d'exploitation en temps réel et du matériel
 
+# 1.2 Sémaphores pour la synchronisation
 
+3., 4., 5., voir les commits du code
+
+6. Changez les priorités. Expliquez les changements dans l’affichage
+   
