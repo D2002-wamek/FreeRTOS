@@ -3,17 +3,14 @@
 ## 3DSN_TP
 
 # Objectif :
-L’objectif de ce TP sur cinq séances est de mettre en place quelques applications sous FreeRTOS en utilisant la carte NUCLEO-G431RB conçue autour du
-microcontrôleur STM32G431RBT6.
-Tout au long du TP, la fonction printf() sera beaucoup utilisée. Pour rendre
-celà possible, il faut ajouter les lignes suivantes, dans le fichier main.c, avant la
-fonction main() :
-
+L’objectif de ce TP sur cinq séances est de mettre en place quelques applications sous FreeRTOS en utilisant la carte NUCLEO-G431RB conçue autour du microcontrôleur STM32G431RBT6.
+Tout au long du TP, la fonction printf() sera beaucoup utilisée. Pour rendre celà possible, il faut ajouter les lignes suivantes, dans le fichier main.c, avant la fonction main() :
+/* USER CODE BEGIN */
 int __io_putchar(int ch) {
 HAL_UART_Transmit(&huart2, (uint8_t *)&ch, 1, HAL_MAX_DELAY);
 return ch;
 }
-
+/* USER CODE END */
 
 # 0 (Re)prise en main
 
