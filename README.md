@@ -60,8 +60,7 @@ while (1)
 /* USER CODE END WHILE */
 
 
-6. Modifiez le programme pour que la LED s’allume lorsque le bouton USER est
-appuyé.
+6. Modifiez le programme pour que la LED s’allume lorsque le bouton USER est appuyé.
 
  while (1)
   {
@@ -74,7 +73,6 @@ appuyé.
        {
            HAL_GPIO_WritePin(GPIOI, GPIO_PIN_1, GPIO_PIN_RESET); // Éteindre la LED
        }
-
        HAL_Delay(10); // Anti-rebond simple
     /* USER CODE END WHILE */
 
@@ -83,5 +81,6 @@ appuyé.
 
 ## 1 FreeRTOS, tâches et sémaphores ##
 # 1.1 Tâche simple #
-
+1. En quoi le paramètre TOTAL_HEAP_SIZE a-t-il de l’importance ?
+  
 
