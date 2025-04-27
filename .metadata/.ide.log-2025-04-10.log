@@ -1,0 +1,288 @@
+2025-04-10 08:12:30,642 [INFO] WebApp:190 - Connection lost
+2025-04-10 08:12:49,716 [INFO] WebApp:187 - Connection restablished
+2025-04-10 08:12:49,827 [INFO] WebApp:190 - Connection lost
+2025-04-10 08:12:49,985 [INFO] WebApp:187 - Connection restablished
+2025-04-10 08:14:22,329 [INFO] WebApp:190 - Connection lost
+2025-04-10 08:14:22,738 [INFO] WebApp:187 - Connection restablished
+2025-04-10 08:30:37,928 [ERROR] RtosPanel:558 - Can not restore the selected Tab for FREERTOS(A reason can be that the tab is no more available.)
+2025-04-10 08:30:38,382 [ERROR] RtosPanel:558 - Can not restore the selected Tab for FREERTOS(A reason can be that the tab is no more available.)
+2025-04-10 08:30:39,070 [ERROR] RtosPanel:558 - Can not restore the selected Tab for FREERTOS(A reason can be that the tab is no more available.)
+2025-04-10 08:30:46,222 [INFO] TasksAndQueuesTab:757 - Dynamic
+2025-04-10 08:30:46,222 [WARN] TasksAndQueuesTab:763 - 128 128
+2025-04-10 08:30:46,222 [WARN] TasksAndQueuesTab:775 - max value is: 3840.0
+2025-04-10 08:31:09,434 [INFO] EditThreadDialog:704 - RAM SIZE (in KB): 320
+2025-04-10 08:31:09,434 [INFO] EditThreadDialog:706 - RAM SIZE (in words): 81920
+2025-04-10 08:32:05,321 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 940360104 Bytes (1073741824)
+2025-04-10 08:32:07,669 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 964758136 Bytes (1073741824)
+2025-04-10 08:32:07,986 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 992021112 Bytes (1073741824)
+2025-04-10 08:32:14,471 [INFO] BlockDiagram:2766 - set Specific Code input for plugin: FREERTOS
+2025-04-10 08:32:14,472 [INFO] BlockDiagram:2766 - set Specific Code input for plugin: SYS
+2025-04-10 08:32:14,472 [INFO] BlockDiagram:2766 - set Specific Code input for plugin: RCC
+2025-04-10 08:32:14,472 [INFO] BlockDiagram:2766 - set Specific Code input for plugin: NVIC
+2025-04-10 08:32:14,472 [INFO] BlockDiagram:2766 - set Specific Code input for plugin: USART
+2025-04-10 08:32:14,473 [INFO] BlockDiagram:2766 - set Specific Code input for plugin: GPIO
+2025-04-10 08:32:14,474 [INFO] CodeGenerator:896 - code generatio: config db path: C:\ST\STM32CubeIDE_1.17.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.13.0.202411220809\\db\
+2025-04-10 08:32:14,660 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\debor\OneDrive\Desktop\ENSEA\ENSEA_24-25\Semestre_10\Noyau_temps_reel\FreeRTOS\TP_FreeRTOS\MXTmpFiles\license.tmp_save
+2025-04-10 08:32:15,101 [INFO] CodeEngine:279 - Generated code: C:\Users\debor\OneDrive\Desktop\ENSEA\ENSEA_24-25\Semestre_10\Noyau_temps_reel\FreeRTOS\TP_FreeRTOS\MXTmpFiles\license.tmp
+2025-04-10 08:32:15,476 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\debor\OneDrive\Desktop\ENSEA\ENSEA_24-25\Semestre_10\Noyau_temps_reel\FreeRTOS\TP_FreeRTOS\Core\Src\gpio.c_save
+2025-04-10 08:32:15,677 [INFO] CodeEngine:279 - Generated code: C:\Users\debor\OneDrive\Desktop\ENSEA\ENSEA_24-25\Semestre_10\Noyau_temps_reel\FreeRTOS\TP_FreeRTOS\Core\Src\gpio.c
+2025-04-10 08:32:15,688 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\debor\OneDrive\Desktop\ENSEA\ENSEA_24-25\Semestre_10\Noyau_temps_reel\FreeRTOS\TP_FreeRTOS\Core\Inc\gpio.h_save
+2025-04-10 08:32:15,796 [INFO] CodeEngine:279 - Generated code: C:\Users\debor\OneDrive\Desktop\ENSEA\ENSEA_24-25\Semestre_10\Noyau_temps_reel\FreeRTOS\TP_FreeRTOS\Core\Inc\gpio.h
+2025-04-10 08:32:17,153 [INFO] Middleware:1450 - No code input for Bsp Dependency
+2025-04-10 08:32:17,162 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\debor\OneDrive\Desktop\ENSEA\ENSEA_24-25\Semestre_10\Noyau_temps_reel\FreeRTOS\TP_FreeRTOS\MXTmpFiles\rtos_inc.tmp_save
+2025-04-10 08:32:17,223 [INFO] CodeEngine:279 - Generated code: C:\Users\debor\OneDrive\Desktop\ENSEA\ENSEA_24-25\Semestre_10\Noyau_temps_reel\FreeRTOS\TP_FreeRTOS\MXTmpFiles\rtos_inc.tmp
+2025-04-10 08:32:17,229 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\debor\OneDrive\Desktop\ENSEA\ENSEA_24-25\Semestre_10\Noyau_temps_reel\FreeRTOS\TP_FreeRTOS\MXTmpFiles\rtos_vars.tmp_save
+2025-04-10 08:32:17,290 [INFO] CodeEngine:279 - Generated code: C:\Users\debor\OneDrive\Desktop\ENSEA\ENSEA_24-25\Semestre_10\Noyau_temps_reel\FreeRTOS\TP_FreeRTOS\MXTmpFiles\rtos_vars.tmp
+2025-04-10 08:32:17,295 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\debor\OneDrive\Desktop\ENSEA\ENSEA_24-25\Semestre_10\Noyau_temps_reel\FreeRTOS\TP_FreeRTOS\MXTmpFiles\rtos_pfp.tmp_save
+2025-04-10 08:32:17,350 [INFO] CodeEngine:279 - Generated code: C:\Users\debor\OneDrive\Desktop\ENSEA\ENSEA_24-25\Semestre_10\Noyau_temps_reel\FreeRTOS\TP_FreeRTOS\MXTmpFiles\rtos_pfp.tmp
+2025-04-10 08:32:17,355 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\debor\OneDrive\Desktop\ENSEA\ENSEA_24-25\Semestre_10\Noyau_temps_reel\FreeRTOS\TP_FreeRTOS\MXTmpFiles\rtos_obj_creat.tmp_save
+2025-04-10 08:32:17,410 [INFO] CodeEngine:279 - Generated code: C:\Users\debor\OneDrive\Desktop\ENSEA\ENSEA_24-25\Semestre_10\Noyau_temps_reel\FreeRTOS\TP_FreeRTOS\MXTmpFiles\rtos_obj_creat.tmp
+2025-04-10 08:32:17,415 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\debor\OneDrive\Desktop\ENSEA\ENSEA_24-25\Semestre_10\Noyau_temps_reel\FreeRTOS\TP_FreeRTOS\MXTmpFiles\rtos_kernelStart.tmp_save
+2025-04-10 08:32:17,471 [INFO] CodeEngine:279 - Generated code: C:\Users\debor\OneDrive\Desktop\ENSEA\ENSEA_24-25\Semestre_10\Noyau_temps_reel\FreeRTOS\TP_FreeRTOS\MXTmpFiles\rtos_kernelStart.tmp
+2025-04-10 08:32:17,475 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\debor\OneDrive\Desktop\ENSEA\ENSEA_24-25\Semestre_10\Noyau_temps_reel\FreeRTOS\TP_FreeRTOS\MXTmpFiles\rtos_default_thread.tmp_save
+2025-04-10 08:32:17,532 [INFO] CodeEngine:279 - Generated code: C:\Users\debor\OneDrive\Desktop\ENSEA\ENSEA_24-25\Semestre_10\Noyau_temps_reel\FreeRTOS\TP_FreeRTOS\MXTmpFiles\rtos_default_thread.tmp
+2025-04-10 08:32:17,537 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\debor\OneDrive\Desktop\ENSEA\ENSEA_24-25\Semestre_10\Noyau_temps_reel\FreeRTOS\TP_FreeRTOS\MXTmpFiles\rtos_threads.tmp_save
+2025-04-10 08:32:17,589 [INFO] CodeEngine:279 - Generated code: C:\Users\debor\OneDrive\Desktop\ENSEA\ENSEA_24-25\Semestre_10\Noyau_temps_reel\FreeRTOS\TP_FreeRTOS\MXTmpFiles\rtos_threads.tmp
+2025-04-10 08:32:17,614 [INFO] Middleware:1450 - No code input for Bsp Dependency
+2025-04-10 08:32:17,624 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\debor\OneDrive\Desktop\ENSEA\ENSEA_24-25\Semestre_10\Noyau_temps_reel\FreeRTOS\TP_FreeRTOS\MXTmpFiles\rtos_inc.tmp_save
+2025-04-10 08:32:17,680 [INFO] CodeEngine:279 - Generated code: C:\Users\debor\OneDrive\Desktop\ENSEA\ENSEA_24-25\Semestre_10\Noyau_temps_reel\FreeRTOS\TP_FreeRTOS\MXTmpFiles\rtos_inc.tmp
+2025-04-10 08:32:17,686 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\debor\OneDrive\Desktop\ENSEA\ENSEA_24-25\Semestre_10\Noyau_temps_reel\FreeRTOS\TP_FreeRTOS\MXTmpFiles\rtos_vars.tmp_save
+2025-04-10 08:32:17,744 [INFO] CodeEngine:279 - Generated code: C:\Users\debor\OneDrive\Desktop\ENSEA\ENSEA_24-25\Semestre_10\Noyau_temps_reel\FreeRTOS\TP_FreeRTOS\MXTmpFiles\rtos_vars.tmp
+2025-04-10 08:32:17,752 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\debor\OneDrive\Desktop\ENSEA\ENSEA_24-25\Semestre_10\Noyau_temps_reel\FreeRTOS\TP_FreeRTOS\MXTmpFiles\rtos_pfp.tmp_save
+2025-04-10 08:32:17,802 [INFO] CodeEngine:279 - Generated code: C:\Users\debor\OneDrive\Desktop\ENSEA\ENSEA_24-25\Semestre_10\Noyau_temps_reel\FreeRTOS\TP_FreeRTOS\MXTmpFiles\rtos_pfp.tmp
+2025-04-10 08:32:17,807 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\debor\OneDrive\Desktop\ENSEA\ENSEA_24-25\Semestre_10\Noyau_temps_reel\FreeRTOS\TP_FreeRTOS\MXTmpFiles\rtos_obj_creat.tmp_save
+2025-04-10 08:32:17,866 [INFO] CodeEngine:279 - Generated code: C:\Users\debor\OneDrive\Desktop\ENSEA\ENSEA_24-25\Semestre_10\Noyau_temps_reel\FreeRTOS\TP_FreeRTOS\MXTmpFiles\rtos_obj_creat.tmp
+2025-04-10 08:32:17,872 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\debor\OneDrive\Desktop\ENSEA\ENSEA_24-25\Semestre_10\Noyau_temps_reel\FreeRTOS\TP_FreeRTOS\MXTmpFiles\rtos_kernelStart.tmp_save
+2025-04-10 08:32:17,925 [INFO] CodeEngine:279 - Generated code: C:\Users\debor\OneDrive\Desktop\ENSEA\ENSEA_24-25\Semestre_10\Noyau_temps_reel\FreeRTOS\TP_FreeRTOS\MXTmpFiles\rtos_kernelStart.tmp
+2025-04-10 08:32:17,930 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\debor\OneDrive\Desktop\ENSEA\ENSEA_24-25\Semestre_10\Noyau_temps_reel\FreeRTOS\TP_FreeRTOS\MXTmpFiles\rtos_default_thread.tmp_save
+2025-04-10 08:32:17,980 [INFO] CodeEngine:279 - Generated code: C:\Users\debor\OneDrive\Desktop\ENSEA\ENSEA_24-25\Semestre_10\Noyau_temps_reel\FreeRTOS\TP_FreeRTOS\MXTmpFiles\rtos_default_thread.tmp
+2025-04-10 08:32:17,985 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\debor\OneDrive\Desktop\ENSEA\ENSEA_24-25\Semestre_10\Noyau_temps_reel\FreeRTOS\TP_FreeRTOS\MXTmpFiles\rtos_threads.tmp_save
+2025-04-10 08:32:18,034 [INFO] CodeEngine:279 - Generated code: C:\Users\debor\OneDrive\Desktop\ENSEA\ENSEA_24-25\Semestre_10\Noyau_temps_reel\FreeRTOS\TP_FreeRTOS\MXTmpFiles\rtos_threads.tmp
+2025-04-10 08:32:18,043 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\debor\OneDrive\Desktop\ENSEA\ENSEA_24-25\Semestre_10\Noyau_temps_reel\FreeRTOS\TP_FreeRTOS\Core\Inc\FreeRTOSConfig.h_save
+2025-04-10 08:32:18,120 [INFO] CodeEngine:279 - Generated code: C:\Users\debor\OneDrive\Desktop\ENSEA\ENSEA_24-25\Semestre_10\Noyau_temps_reel\FreeRTOS\TP_FreeRTOS\Core\Inc\FreeRTOSConfig.h
+2025-04-10 08:32:18,129 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\debor\OneDrive\Desktop\ENSEA\ENSEA_24-25\Semestre_10\Noyau_temps_reel\FreeRTOS\TP_FreeRTOS\Core\Src\freertos.c_save
+2025-04-10 08:32:18,207 [INFO] CodeEngine:279 - Generated code: C:\Users\debor\OneDrive\Desktop\ENSEA\ENSEA_24-25\Semestre_10\Noyau_temps_reel\FreeRTOS\TP_FreeRTOS\Core\Src\freertos.c
+2025-04-10 08:32:18,225 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\debor\OneDrive\Desktop\ENSEA\ENSEA_24-25\Semestre_10\Noyau_temps_reel\FreeRTOS\TP_FreeRTOS\MXTmpFiles\cortex.tmp_save
+2025-04-10 08:32:18,289 [INFO] CodeEngine:279 - Generated code: C:\Users\debor\OneDrive\Desktop\ENSEA\ENSEA_24-25\Semestre_10\Noyau_temps_reel\FreeRTOS\TP_FreeRTOS\MXTmpFiles\cortex.tmp
+2025-04-10 08:32:18,308 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\debor\OneDrive\Desktop\ENSEA\ENSEA_24-25\Semestre_10\Noyau_temps_reel\FreeRTOS\TP_FreeRTOS\Core\Src\usart.c_save
+2025-04-10 08:32:18,464 [INFO] CodeEngine:279 - Generated code: C:\Users\debor\OneDrive\Desktop\ENSEA\ENSEA_24-25\Semestre_10\Noyau_temps_reel\FreeRTOS\TP_FreeRTOS\Core\Src\usart.c
+2025-04-10 08:32:18,478 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\debor\OneDrive\Desktop\ENSEA\ENSEA_24-25\Semestre_10\Noyau_temps_reel\FreeRTOS\TP_FreeRTOS\Core\Inc\usart.h_save
+2025-04-10 08:32:18,551 [INFO] CodeEngine:279 - Generated code: C:\Users\debor\OneDrive\Desktop\ENSEA\ENSEA_24-25\Semestre_10\Noyau_temps_reel\FreeRTOS\TP_FreeRTOS\Core\Inc\usart.h
+2025-04-10 08:32:18,569 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\debor\OneDrive\Desktop\ENSEA\ENSEA_24-25\Semestre_10\Noyau_temps_reel\FreeRTOS\TP_FreeRTOS\Core\Src\stm32f7xx_it.c_save
+2025-04-10 08:32:18,738 [INFO] CodeEngine:279 - Generated code: C:\Users\debor\OneDrive\Desktop\ENSEA\ENSEA_24-25\Semestre_10\Noyau_temps_reel\FreeRTOS\TP_FreeRTOS\Core\Src\stm32f7xx_it.c
+2025-04-10 08:32:18,750 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\debor\OneDrive\Desktop\ENSEA\ENSEA_24-25\Semestre_10\Noyau_temps_reel\FreeRTOS\TP_FreeRTOS\Core\Inc\stm32f7xx_it.h_save
+2025-04-10 08:32:18,820 [INFO] CodeEngine:279 - Generated code: C:\Users\debor\OneDrive\Desktop\ENSEA\ENSEA_24-25\Semestre_10\Noyau_temps_reel\FreeRTOS\TP_FreeRTOS\Core\Inc\stm32f7xx_it.h
+2025-04-10 08:32:18,840 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\debor\OneDrive\Desktop\ENSEA\ENSEA_24-25\Semestre_10\Noyau_temps_reel\FreeRTOS\TP_FreeRTOS\Core\Src\stm32f7xx_hal_msp.c_save
+2025-04-10 08:32:18,964 [INFO] CodeEngine:279 - Generated code: C:\Users\debor\OneDrive\Desktop\ENSEA\ENSEA_24-25\Semestre_10\Noyau_temps_reel\FreeRTOS\TP_FreeRTOS\Core\Src\stm32f7xx_hal_msp.c
+2025-04-10 08:32:18,971 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\debor\OneDrive\Desktop\ENSEA\ENSEA_24-25\Semestre_10\Noyau_temps_reel\FreeRTOS\TP_FreeRTOS\MXTmpFiles\system.tmp_save
+2025-04-10 08:32:19,031 [INFO] CodeEngine:279 - Generated code: C:\Users\debor\OneDrive\Desktop\ENSEA\ENSEA_24-25\Semestre_10\Noyau_temps_reel\FreeRTOS\TP_FreeRTOS\MXTmpFiles\system.tmp
+2025-04-10 08:32:19,052 [INFO] CodeEngine:311 - oldGeneratedFile, C:\Users\debor\OneDrive\Desktop\ENSEA\ENSEA_24-25\Semestre_10\Noyau_temps_reel\FreeRTOS\TP_FreeRTOS\Core\Inc\stm32f7xx_hal_conf.h_save
+2025-04-10 08:32:19,136 [INFO] CodeEngine:335 - Generated code: C:\Users\debor\OneDrive\Desktop\ENSEA\ENSEA_24-25\Semestre_10\Noyau_temps_reel\FreeRTOS\TP_FreeRTOS\Core\Inc\stm32f7xx_hal_conf.h
+2025-04-10 08:32:19,189 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\debor\OneDrive\Desktop\ENSEA\ENSEA_24-25\Semestre_10\Noyau_temps_reel\FreeRTOS\TP_FreeRTOS\Core\Inc\main.h_save
+2025-04-10 08:32:19,302 [INFO] CodeEngine:279 - Generated code: C:\Users\debor\OneDrive\Desktop\ENSEA\ENSEA_24-25\Semestre_10\Noyau_temps_reel\FreeRTOS\TP_FreeRTOS\Core\Inc\main.h
+2025-04-10 08:32:19,315 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\debor\OneDrive\Desktop\ENSEA\ENSEA_24-25\Semestre_10\Noyau_temps_reel\FreeRTOS\TP_FreeRTOS\Core\Src\main.c_save
+2025-04-10 08:32:19,408 [INFO] CodeEngine:279 - Generated code: C:\Users\debor\OneDrive\Desktop\ENSEA\ENSEA_24-25\Semestre_10\Noyau_temps_reel\FreeRTOS\TP_FreeRTOS\Core\Src\main.c
+2025-04-10 08:32:20,131 [INFO] ProjectBuilder:3289 - Time for Copy HAL[1] : 354mS.
+2025-04-10 08:32:20,143 [INFO] ProjectBuilder:4876 - Project Generator version: 4.5.0-RC5
+2025-04-10 08:32:20,233 [INFO] ConfigFileManager:1579 - The Die is : DIE449
+2025-04-10 08:32:21,414 [INFO] ProjectBuilder:5154 - Time for Generating toolchain IDE Files: 1271mS.
+2025-04-10 08:32:21,415 [INFO] ProjectBuilder:3146 - Time for Copy CMSIS : 1mS.
+2025-04-10 08:32:21,425 [INFO] ProjectBuilder:3146 - Time for Copy CMSIS : 0mS.
+2025-04-10 08:38:44,530 [ERROR] RtosPanel:558 - Can not restore the selected Tab for FREERTOS(A reason can be that the tab is no more available.)
+2025-04-10 08:38:44,726 [ERROR] RtosPanel:558 - Can not restore the selected Tab for FREERTOS(A reason can be that the tab is no more available.)
+2025-04-10 08:38:45,065 [ERROR] RtosPanel:558 - Can not restore the selected Tab for FREERTOS(A reason can be that the tab is no more available.)
+2025-04-10 08:38:49,292 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 754902144 Bytes (1073741824)
+2025-04-10 08:38:51,434 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 781289960 Bytes (1073741824)
+2025-04-10 08:38:51,743 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 807857280 Bytes (1073741824)
+2025-04-10 08:38:55,825 [INFO] BlockDiagram:2766 - set Specific Code input for plugin: FREERTOS
+2025-04-10 08:38:55,825 [INFO] BlockDiagram:2766 - set Specific Code input for plugin: SYS
+2025-04-10 08:38:55,825 [INFO] BlockDiagram:2766 - set Specific Code input for plugin: RCC
+2025-04-10 08:38:55,825 [INFO] BlockDiagram:2766 - set Specific Code input for plugin: NVIC
+2025-04-10 08:38:55,825 [INFO] BlockDiagram:2766 - set Specific Code input for plugin: USART
+2025-04-10 08:38:55,826 [INFO] BlockDiagram:2766 - set Specific Code input for plugin: GPIO
+2025-04-10 08:38:55,827 [INFO] CodeGenerator:896 - code generatio: config db path: C:\ST\STM32CubeIDE_1.17.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.13.0.202411220809\\db\
+2025-04-10 08:38:56,009 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\debor\OneDrive\Desktop\ENSEA\ENSEA_24-25\Semestre_10\Noyau_temps_reel\FreeRTOS\TP_FreeRTOS\MXTmpFiles\license.tmp_save
+2025-04-10 08:38:56,092 [INFO] CodeEngine:279 - Generated code: C:\Users\debor\OneDrive\Desktop\ENSEA\ENSEA_24-25\Semestre_10\Noyau_temps_reel\FreeRTOS\TP_FreeRTOS\MXTmpFiles\license.tmp
+2025-04-10 08:38:56,245 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\debor\OneDrive\Desktop\ENSEA\ENSEA_24-25\Semestre_10\Noyau_temps_reel\FreeRTOS\TP_FreeRTOS\Core\Src\gpio.c_save
+2025-04-10 08:38:56,327 [INFO] CodeEngine:279 - Generated code: C:\Users\debor\OneDrive\Desktop\ENSEA\ENSEA_24-25\Semestre_10\Noyau_temps_reel\FreeRTOS\TP_FreeRTOS\Core\Src\gpio.c
+2025-04-10 08:38:56,335 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\debor\OneDrive\Desktop\ENSEA\ENSEA_24-25\Semestre_10\Noyau_temps_reel\FreeRTOS\TP_FreeRTOS\Core\Inc\gpio.h_save
+2025-04-10 08:38:56,391 [INFO] CodeEngine:279 - Generated code: C:\Users\debor\OneDrive\Desktop\ENSEA\ENSEA_24-25\Semestre_10\Noyau_temps_reel\FreeRTOS\TP_FreeRTOS\Core\Inc\gpio.h
+2025-04-10 08:38:57,180 [INFO] Middleware:1450 - No code input for Bsp Dependency
+2025-04-10 08:38:57,187 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\debor\OneDrive\Desktop\ENSEA\ENSEA_24-25\Semestre_10\Noyau_temps_reel\FreeRTOS\TP_FreeRTOS\MXTmpFiles\rtos_inc.tmp_save
+2025-04-10 08:38:57,238 [INFO] CodeEngine:279 - Generated code: C:\Users\debor\OneDrive\Desktop\ENSEA\ENSEA_24-25\Semestre_10\Noyau_temps_reel\FreeRTOS\TP_FreeRTOS\MXTmpFiles\rtos_inc.tmp
+2025-04-10 08:38:57,241 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\debor\OneDrive\Desktop\ENSEA\ENSEA_24-25\Semestre_10\Noyau_temps_reel\FreeRTOS\TP_FreeRTOS\MXTmpFiles\rtos_kernelInit.tmp_save
+2025-04-10 08:38:57,294 [INFO] CodeEngine:279 - Generated code: C:\Users\debor\OneDrive\Desktop\ENSEA\ENSEA_24-25\Semestre_10\Noyau_temps_reel\FreeRTOS\TP_FreeRTOS\MXTmpFiles\rtos_kernelInit.tmp
+2025-04-10 08:38:57,301 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\debor\OneDrive\Desktop\ENSEA\ENSEA_24-25\Semestre_10\Noyau_temps_reel\FreeRTOS\TP_FreeRTOS\MXTmpFiles\rtos_kernelStart.tmp_save
+2025-04-10 08:38:57,363 [INFO] CodeEngine:279 - Generated code: C:\Users\debor\OneDrive\Desktop\ENSEA\ENSEA_24-25\Semestre_10\Noyau_temps_reel\FreeRTOS\TP_FreeRTOS\MXTmpFiles\rtos_kernelStart.tmp
+2025-04-10 08:38:57,370 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\debor\OneDrive\Desktop\ENSEA\ENSEA_24-25\Semestre_10\Noyau_temps_reel\FreeRTOS\TP_FreeRTOS\MXTmpFiles\rtos_typedefs.tmp_save
+2025-04-10 08:38:57,459 [INFO] CodeEngine:279 - Generated code: C:\Users\debor\OneDrive\Desktop\ENSEA\ENSEA_24-25\Semestre_10\Noyau_temps_reel\FreeRTOS\TP_FreeRTOS\MXTmpFiles\rtos_typedefs.tmp
+2025-04-10 08:38:57,470 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\debor\OneDrive\Desktop\ENSEA\ENSEA_24-25\Semestre_10\Noyau_temps_reel\FreeRTOS\TP_FreeRTOS\MXTmpFiles\rtos_vars.tmp_save
+2025-04-10 08:38:57,548 [INFO] CodeEngine:279 - Generated code: C:\Users\debor\OneDrive\Desktop\ENSEA\ENSEA_24-25\Semestre_10\Noyau_temps_reel\FreeRTOS\TP_FreeRTOS\MXTmpFiles\rtos_vars.tmp
+2025-04-10 08:38:57,555 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\debor\OneDrive\Desktop\ENSEA\ENSEA_24-25\Semestre_10\Noyau_temps_reel\FreeRTOS\TP_FreeRTOS\MXTmpFiles\rtos_pfp.tmp_save
+2025-04-10 08:38:57,642 [INFO] CodeEngine:279 - Generated code: C:\Users\debor\OneDrive\Desktop\ENSEA\ENSEA_24-25\Semestre_10\Noyau_temps_reel\FreeRTOS\TP_FreeRTOS\MXTmpFiles\rtos_pfp.tmp
+2025-04-10 08:38:57,651 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\debor\OneDrive\Desktop\ENSEA\ENSEA_24-25\Semestre_10\Noyau_temps_reel\FreeRTOS\TP_FreeRTOS\MXTmpFiles\rtos_obj_creat.tmp_save
+2025-04-10 08:38:57,726 [INFO] CodeEngine:279 - Generated code: C:\Users\debor\OneDrive\Desktop\ENSEA\ENSEA_24-25\Semestre_10\Noyau_temps_reel\FreeRTOS\TP_FreeRTOS\MXTmpFiles\rtos_obj_creat.tmp
+2025-04-10 08:38:57,731 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\debor\OneDrive\Desktop\ENSEA\ENSEA_24-25\Semestre_10\Noyau_temps_reel\FreeRTOS\TP_FreeRTOS\MXTmpFiles\rtos_default_thread.tmp_save
+2025-04-10 08:38:57,812 [INFO] CodeEngine:279 - Generated code: C:\Users\debor\OneDrive\Desktop\ENSEA\ENSEA_24-25\Semestre_10\Noyau_temps_reel\FreeRTOS\TP_FreeRTOS\MXTmpFiles\rtos_default_thread.tmp
+2025-04-10 08:38:57,822 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\debor\OneDrive\Desktop\ENSEA\ENSEA_24-25\Semestre_10\Noyau_temps_reel\FreeRTOS\TP_FreeRTOS\MXTmpFiles\rtos_threads.tmp_save
+2025-04-10 08:38:57,920 [INFO] CodeEngine:279 - Generated code: C:\Users\debor\OneDrive\Desktop\ENSEA\ENSEA_24-25\Semestre_10\Noyau_temps_reel\FreeRTOS\TP_FreeRTOS\MXTmpFiles\rtos_threads.tmp
+2025-04-10 08:38:57,941 [INFO] Middleware:1450 - No code input for Bsp Dependency
+2025-04-10 08:38:57,951 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\debor\OneDrive\Desktop\ENSEA\ENSEA_24-25\Semestre_10\Noyau_temps_reel\FreeRTOS\TP_FreeRTOS\MXTmpFiles\rtos_inc.tmp_save
+2025-04-10 08:38:58,014 [INFO] CodeEngine:279 - Generated code: C:\Users\debor\OneDrive\Desktop\ENSEA\ENSEA_24-25\Semestre_10\Noyau_temps_reel\FreeRTOS\TP_FreeRTOS\MXTmpFiles\rtos_inc.tmp
+2025-04-10 08:38:58,019 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\debor\OneDrive\Desktop\ENSEA\ENSEA_24-25\Semestre_10\Noyau_temps_reel\FreeRTOS\TP_FreeRTOS\MXTmpFiles\rtos_kernelInit.tmp_save
+2025-04-10 08:38:58,094 [INFO] CodeEngine:279 - Generated code: C:\Users\debor\OneDrive\Desktop\ENSEA\ENSEA_24-25\Semestre_10\Noyau_temps_reel\FreeRTOS\TP_FreeRTOS\MXTmpFiles\rtos_kernelInit.tmp
+2025-04-10 08:38:58,099 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\debor\OneDrive\Desktop\ENSEA\ENSEA_24-25\Semestre_10\Noyau_temps_reel\FreeRTOS\TP_FreeRTOS\MXTmpFiles\rtos_kernelStart.tmp_save
+2025-04-10 08:38:58,149 [INFO] CodeEngine:279 - Generated code: C:\Users\debor\OneDrive\Desktop\ENSEA\ENSEA_24-25\Semestre_10\Noyau_temps_reel\FreeRTOS\TP_FreeRTOS\MXTmpFiles\rtos_kernelStart.tmp
+2025-04-10 08:38:58,155 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\debor\OneDrive\Desktop\ENSEA\ENSEA_24-25\Semestre_10\Noyau_temps_reel\FreeRTOS\TP_FreeRTOS\MXTmpFiles\rtos_typedefs.tmp_save
+2025-04-10 08:38:58,220 [INFO] CodeEngine:279 - Generated code: C:\Users\debor\OneDrive\Desktop\ENSEA\ENSEA_24-25\Semestre_10\Noyau_temps_reel\FreeRTOS\TP_FreeRTOS\MXTmpFiles\rtos_typedefs.tmp
+2025-04-10 08:38:58,227 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\debor\OneDrive\Desktop\ENSEA\ENSEA_24-25\Semestre_10\Noyau_temps_reel\FreeRTOS\TP_FreeRTOS\MXTmpFiles\rtos_vars.tmp_save
+2025-04-10 08:38:58,302 [INFO] CodeEngine:279 - Generated code: C:\Users\debor\OneDrive\Desktop\ENSEA\ENSEA_24-25\Semestre_10\Noyau_temps_reel\FreeRTOS\TP_FreeRTOS\MXTmpFiles\rtos_vars.tmp
+2025-04-10 08:38:58,307 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\debor\OneDrive\Desktop\ENSEA\ENSEA_24-25\Semestre_10\Noyau_temps_reel\FreeRTOS\TP_FreeRTOS\MXTmpFiles\rtos_pfp.tmp_save
+2025-04-10 08:38:58,363 [INFO] CodeEngine:279 - Generated code: C:\Users\debor\OneDrive\Desktop\ENSEA\ENSEA_24-25\Semestre_10\Noyau_temps_reel\FreeRTOS\TP_FreeRTOS\MXTmpFiles\rtos_pfp.tmp
+2025-04-10 08:38:58,369 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\debor\OneDrive\Desktop\ENSEA\ENSEA_24-25\Semestre_10\Noyau_temps_reel\FreeRTOS\TP_FreeRTOS\MXTmpFiles\rtos_obj_creat.tmp_save
+2025-04-10 08:38:58,438 [INFO] CodeEngine:279 - Generated code: C:\Users\debor\OneDrive\Desktop\ENSEA\ENSEA_24-25\Semestre_10\Noyau_temps_reel\FreeRTOS\TP_FreeRTOS\MXTmpFiles\rtos_obj_creat.tmp
+2025-04-10 08:38:58,442 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\debor\OneDrive\Desktop\ENSEA\ENSEA_24-25\Semestre_10\Noyau_temps_reel\FreeRTOS\TP_FreeRTOS\MXTmpFiles\rtos_default_thread.tmp_save
+2025-04-10 08:38:58,487 [INFO] CodeEngine:279 - Generated code: C:\Users\debor\OneDrive\Desktop\ENSEA\ENSEA_24-25\Semestre_10\Noyau_temps_reel\FreeRTOS\TP_FreeRTOS\MXTmpFiles\rtos_default_thread.tmp
+2025-04-10 08:38:58,494 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\debor\OneDrive\Desktop\ENSEA\ENSEA_24-25\Semestre_10\Noyau_temps_reel\FreeRTOS\TP_FreeRTOS\MXTmpFiles\rtos_threads.tmp_save
+2025-04-10 08:38:58,563 [INFO] CodeEngine:279 - Generated code: C:\Users\debor\OneDrive\Desktop\ENSEA\ENSEA_24-25\Semestre_10\Noyau_temps_reel\FreeRTOS\TP_FreeRTOS\MXTmpFiles\rtos_threads.tmp
+2025-04-10 08:38:58,574 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\debor\OneDrive\Desktop\ENSEA\ENSEA_24-25\Semestre_10\Noyau_temps_reel\FreeRTOS\TP_FreeRTOS\Core\Inc\FreeRTOSConfig.h_save
+2025-04-10 08:38:58,658 [INFO] CodeEngine:279 - Generated code: C:\Users\debor\OneDrive\Desktop\ENSEA\ENSEA_24-25\Semestre_10\Noyau_temps_reel\FreeRTOS\TP_FreeRTOS\Core\Inc\FreeRTOSConfig.h
+2025-04-10 08:38:58,675 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\debor\OneDrive\Desktop\ENSEA\ENSEA_24-25\Semestre_10\Noyau_temps_reel\FreeRTOS\TP_FreeRTOS\Core\Src\freertos.c_save
+2025-04-10 08:38:58,821 [INFO] CodeEngine:279 - Generated code: C:\Users\debor\OneDrive\Desktop\ENSEA\ENSEA_24-25\Semestre_10\Noyau_temps_reel\FreeRTOS\TP_FreeRTOS\Core\Src\freertos.c
+2025-04-10 08:38:58,845 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\debor\OneDrive\Desktop\ENSEA\ENSEA_24-25\Semestre_10\Noyau_temps_reel\FreeRTOS\TP_FreeRTOS\MXTmpFiles\cortex.tmp_save
+2025-04-10 08:38:58,955 [INFO] CodeEngine:279 - Generated code: C:\Users\debor\OneDrive\Desktop\ENSEA\ENSEA_24-25\Semestre_10\Noyau_temps_reel\FreeRTOS\TP_FreeRTOS\MXTmpFiles\cortex.tmp
+2025-04-10 08:38:58,966 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\debor\OneDrive\Desktop\ENSEA\ENSEA_24-25\Semestre_10\Noyau_temps_reel\FreeRTOS\TP_FreeRTOS\Core\Src\usart.c_save
+2025-04-10 08:38:59,059 [INFO] CodeEngine:279 - Generated code: C:\Users\debor\OneDrive\Desktop\ENSEA\ENSEA_24-25\Semestre_10\Noyau_temps_reel\FreeRTOS\TP_FreeRTOS\Core\Src\usart.c
+2025-04-10 08:38:59,071 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\debor\OneDrive\Desktop\ENSEA\ENSEA_24-25\Semestre_10\Noyau_temps_reel\FreeRTOS\TP_FreeRTOS\Core\Inc\usart.h_save
+2025-04-10 08:38:59,177 [INFO] CodeEngine:279 - Generated code: C:\Users\debor\OneDrive\Desktop\ENSEA\ENSEA_24-25\Semestre_10\Noyau_temps_reel\FreeRTOS\TP_FreeRTOS\Core\Inc\usart.h
+2025-04-10 08:38:59,198 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\debor\OneDrive\Desktop\ENSEA\ENSEA_24-25\Semestre_10\Noyau_temps_reel\FreeRTOS\TP_FreeRTOS\Core\Src\stm32f7xx_it.c_save
+2025-04-10 08:38:59,321 [INFO] CodeEngine:279 - Generated code: C:\Users\debor\OneDrive\Desktop\ENSEA\ENSEA_24-25\Semestre_10\Noyau_temps_reel\FreeRTOS\TP_FreeRTOS\Core\Src\stm32f7xx_it.c
+2025-04-10 08:38:59,330 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\debor\OneDrive\Desktop\ENSEA\ENSEA_24-25\Semestre_10\Noyau_temps_reel\FreeRTOS\TP_FreeRTOS\Core\Inc\stm32f7xx_it.h_save
+2025-04-10 08:38:59,411 [INFO] CodeEngine:279 - Generated code: C:\Users\debor\OneDrive\Desktop\ENSEA\ENSEA_24-25\Semestre_10\Noyau_temps_reel\FreeRTOS\TP_FreeRTOS\Core\Inc\stm32f7xx_it.h
+2025-04-10 08:38:59,425 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\debor\OneDrive\Desktop\ENSEA\ENSEA_24-25\Semestre_10\Noyau_temps_reel\FreeRTOS\TP_FreeRTOS\Core\Src\stm32f7xx_hal_msp.c_save
+2025-04-10 08:38:59,518 [INFO] CodeEngine:279 - Generated code: C:\Users\debor\OneDrive\Desktop\ENSEA\ENSEA_24-25\Semestre_10\Noyau_temps_reel\FreeRTOS\TP_FreeRTOS\Core\Src\stm32f7xx_hal_msp.c
+2025-04-10 08:38:59,523 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\debor\OneDrive\Desktop\ENSEA\ENSEA_24-25\Semestre_10\Noyau_temps_reel\FreeRTOS\TP_FreeRTOS\MXTmpFiles\system.tmp_save
+2025-04-10 08:38:59,590 [INFO] CodeEngine:279 - Generated code: C:\Users\debor\OneDrive\Desktop\ENSEA\ENSEA_24-25\Semestre_10\Noyau_temps_reel\FreeRTOS\TP_FreeRTOS\MXTmpFiles\system.tmp
+2025-04-10 08:38:59,602 [INFO] CodeEngine:311 - oldGeneratedFile, C:\Users\debor\OneDrive\Desktop\ENSEA\ENSEA_24-25\Semestre_10\Noyau_temps_reel\FreeRTOS\TP_FreeRTOS\Core\Inc\stm32f7xx_hal_conf.h_save
+2025-04-10 08:38:59,686 [INFO] CodeEngine:335 - Generated code: C:\Users\debor\OneDrive\Desktop\ENSEA\ENSEA_24-25\Semestre_10\Noyau_temps_reel\FreeRTOS\TP_FreeRTOS\Core\Inc\stm32f7xx_hal_conf.h
+2025-04-10 08:38:59,738 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\debor\OneDrive\Desktop\ENSEA\ENSEA_24-25\Semestre_10\Noyau_temps_reel\FreeRTOS\TP_FreeRTOS\Core\Inc\main.h_save
+2025-04-10 08:38:59,850 [INFO] CodeEngine:279 - Generated code: C:\Users\debor\OneDrive\Desktop\ENSEA\ENSEA_24-25\Semestre_10\Noyau_temps_reel\FreeRTOS\TP_FreeRTOS\Core\Inc\main.h
+2025-04-10 08:38:59,859 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\debor\OneDrive\Desktop\ENSEA\ENSEA_24-25\Semestre_10\Noyau_temps_reel\FreeRTOS\TP_FreeRTOS\Core\Src\main.c_save
+2025-04-10 08:38:59,965 [INFO] CodeEngine:279 - Generated code: C:\Users\debor\OneDrive\Desktop\ENSEA\ENSEA_24-25\Semestre_10\Noyau_temps_reel\FreeRTOS\TP_FreeRTOS\Core\Src\main.c
+2025-04-10 08:39:00,448 [INFO] ProjectBuilder:3289 - Time for Copy HAL[1] : 232mS.
+2025-04-10 08:39:00,454 [INFO] ProjectBuilder:4876 - Project Generator version: 4.5.0-RC5
+2025-04-10 08:39:00,513 [INFO] ConfigFileManager:1579 - The Die is : DIE449
+2025-04-10 08:39:01,890 [INFO] ProjectBuilder:5154 - Time for Generating toolchain IDE Files: 1436mS.
+2025-04-10 08:39:01,892 [INFO] ProjectBuilder:3146 - Time for Copy CMSIS : 1mS.
+2025-04-10 08:39:01,905 [INFO] ProjectBuilder:3146 - Time for Copy CMSIS : 0mS.
+2025-04-10 08:51:33,653 [ERROR] RtosPanel:558 - Can not restore the selected Tab for FREERTOS(A reason can be that the tab is no more available.)
+2025-04-10 08:51:34,013 [ERROR] RtosPanel:558 - Can not restore the selected Tab for FREERTOS(A reason can be that the tab is no more available.)
+2025-04-10 08:51:34,608 [ERROR] RtosPanel:558 - Can not restore the selected Tab for FREERTOS(A reason can be that the tab is no more available.)
+2025-04-10 08:51:40,120 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 915441368 Bytes (1073741824)
+2025-04-10 08:51:42,287 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 941129432 Bytes (1073741824)
+2025-04-10 08:51:42,605 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 970489560 Bytes (1073741824)
+2025-04-10 08:51:45,143 [INFO] BlockDiagram:2766 - set Specific Code input for plugin: FREERTOS
+2025-04-10 08:51:45,143 [INFO] BlockDiagram:2766 - set Specific Code input for plugin: SYS
+2025-04-10 08:51:45,143 [INFO] BlockDiagram:2766 - set Specific Code input for plugin: RCC
+2025-04-10 08:51:45,143 [INFO] BlockDiagram:2766 - set Specific Code input for plugin: NVIC
+2025-04-10 08:51:45,144 [INFO] BlockDiagram:2766 - set Specific Code input for plugin: USART
+2025-04-10 08:51:45,147 [INFO] BlockDiagram:2766 - set Specific Code input for plugin: GPIO
+2025-04-10 08:51:45,150 [INFO] CodeGenerator:896 - code generatio: config db path: C:\ST\STM32CubeIDE_1.17.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.13.0.202411220809\\db\
+2025-04-10 08:51:45,408 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\debor\OneDrive\Desktop\ENSEA\ENSEA_24-25\Semestre_10\Noyau_temps_reel\FreeRTOS\TP_FreeRTOS\MXTmpFiles\license.tmp_save
+2025-04-10 08:51:45,482 [INFO] CodeEngine:279 - Generated code: C:\Users\debor\OneDrive\Desktop\ENSEA\ENSEA_24-25\Semestre_10\Noyau_temps_reel\FreeRTOS\TP_FreeRTOS\MXTmpFiles\license.tmp
+2025-04-10 08:51:45,646 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\debor\OneDrive\Desktop\ENSEA\ENSEA_24-25\Semestre_10\Noyau_temps_reel\FreeRTOS\TP_FreeRTOS\Core\Src\gpio.c_save
+2025-04-10 08:51:45,756 [INFO] CodeEngine:279 - Generated code: C:\Users\debor\OneDrive\Desktop\ENSEA\ENSEA_24-25\Semestre_10\Noyau_temps_reel\FreeRTOS\TP_FreeRTOS\Core\Src\gpio.c
+2025-04-10 08:51:45,762 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\debor\OneDrive\Desktop\ENSEA\ENSEA_24-25\Semestre_10\Noyau_temps_reel\FreeRTOS\TP_FreeRTOS\Core\Inc\gpio.h_save
+2025-04-10 08:51:45,816 [INFO] CodeEngine:279 - Generated code: C:\Users\debor\OneDrive\Desktop\ENSEA\ENSEA_24-25\Semestre_10\Noyau_temps_reel\FreeRTOS\TP_FreeRTOS\Core\Inc\gpio.h
+2025-04-10 08:51:46,534 [INFO] Middleware:1450 - No code input for Bsp Dependency
+2025-04-10 08:51:46,542 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\debor\OneDrive\Desktop\ENSEA\ENSEA_24-25\Semestre_10\Noyau_temps_reel\FreeRTOS\TP_FreeRTOS\MXTmpFiles\rtos_inc.tmp_save
+2025-04-10 08:51:46,631 [INFO] CodeEngine:279 - Generated code: C:\Users\debor\OneDrive\Desktop\ENSEA\ENSEA_24-25\Semestre_10\Noyau_temps_reel\FreeRTOS\TP_FreeRTOS\MXTmpFiles\rtos_inc.tmp
+2025-04-10 08:51:46,638 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\debor\OneDrive\Desktop\ENSEA\ENSEA_24-25\Semestre_10\Noyau_temps_reel\FreeRTOS\TP_FreeRTOS\MXTmpFiles\rtos_vars.tmp_save
+2025-04-10 08:51:46,708 [INFO] CodeEngine:279 - Generated code: C:\Users\debor\OneDrive\Desktop\ENSEA\ENSEA_24-25\Semestre_10\Noyau_temps_reel\FreeRTOS\TP_FreeRTOS\MXTmpFiles\rtos_vars.tmp
+2025-04-10 08:51:46,712 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\debor\OneDrive\Desktop\ENSEA\ENSEA_24-25\Semestre_10\Noyau_temps_reel\FreeRTOS\TP_FreeRTOS\MXTmpFiles\rtos_pfp.tmp_save
+2025-04-10 08:51:46,768 [INFO] CodeEngine:279 - Generated code: C:\Users\debor\OneDrive\Desktop\ENSEA\ENSEA_24-25\Semestre_10\Noyau_temps_reel\FreeRTOS\TP_FreeRTOS\MXTmpFiles\rtos_pfp.tmp
+2025-04-10 08:51:46,772 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\debor\OneDrive\Desktop\ENSEA\ENSEA_24-25\Semestre_10\Noyau_temps_reel\FreeRTOS\TP_FreeRTOS\MXTmpFiles\rtos_obj_creat.tmp_save
+2025-04-10 08:51:46,837 [INFO] CodeEngine:279 - Generated code: C:\Users\debor\OneDrive\Desktop\ENSEA\ENSEA_24-25\Semestre_10\Noyau_temps_reel\FreeRTOS\TP_FreeRTOS\MXTmpFiles\rtos_obj_creat.tmp
+2025-04-10 08:51:46,841 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\debor\OneDrive\Desktop\ENSEA\ENSEA_24-25\Semestre_10\Noyau_temps_reel\FreeRTOS\TP_FreeRTOS\MXTmpFiles\rtos_kernelStart.tmp_save
+2025-04-10 08:51:46,887 [INFO] CodeEngine:279 - Generated code: C:\Users\debor\OneDrive\Desktop\ENSEA\ENSEA_24-25\Semestre_10\Noyau_temps_reel\FreeRTOS\TP_FreeRTOS\MXTmpFiles\rtos_kernelStart.tmp
+2025-04-10 08:51:46,893 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\debor\OneDrive\Desktop\ENSEA\ENSEA_24-25\Semestre_10\Noyau_temps_reel\FreeRTOS\TP_FreeRTOS\MXTmpFiles\rtos_default_thread.tmp_save
+2025-04-10 08:51:46,959 [INFO] CodeEngine:279 - Generated code: C:\Users\debor\OneDrive\Desktop\ENSEA\ENSEA_24-25\Semestre_10\Noyau_temps_reel\FreeRTOS\TP_FreeRTOS\MXTmpFiles\rtos_default_thread.tmp
+2025-04-10 08:51:46,965 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\debor\OneDrive\Desktop\ENSEA\ENSEA_24-25\Semestre_10\Noyau_temps_reel\FreeRTOS\TP_FreeRTOS\MXTmpFiles\rtos_threads.tmp_save
+2025-04-10 08:51:47,062 [INFO] CodeEngine:279 - Generated code: C:\Users\debor\OneDrive\Desktop\ENSEA\ENSEA_24-25\Semestre_10\Noyau_temps_reel\FreeRTOS\TP_FreeRTOS\MXTmpFiles\rtos_threads.tmp
+2025-04-10 08:51:47,083 [INFO] Middleware:1450 - No code input for Bsp Dependency
+2025-04-10 08:51:47,091 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\debor\OneDrive\Desktop\ENSEA\ENSEA_24-25\Semestre_10\Noyau_temps_reel\FreeRTOS\TP_FreeRTOS\MXTmpFiles\rtos_inc.tmp_save
+2025-04-10 08:51:47,143 [INFO] CodeEngine:279 - Generated code: C:\Users\debor\OneDrive\Desktop\ENSEA\ENSEA_24-25\Semestre_10\Noyau_temps_reel\FreeRTOS\TP_FreeRTOS\MXTmpFiles\rtos_inc.tmp
+2025-04-10 08:51:47,151 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\debor\OneDrive\Desktop\ENSEA\ENSEA_24-25\Semestre_10\Noyau_temps_reel\FreeRTOS\TP_FreeRTOS\MXTmpFiles\rtos_vars.tmp_save
+2025-04-10 08:51:47,225 [INFO] CodeEngine:279 - Generated code: C:\Users\debor\OneDrive\Desktop\ENSEA\ENSEA_24-25\Semestre_10\Noyau_temps_reel\FreeRTOS\TP_FreeRTOS\MXTmpFiles\rtos_vars.tmp
+2025-04-10 08:51:47,231 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\debor\OneDrive\Desktop\ENSEA\ENSEA_24-25\Semestre_10\Noyau_temps_reel\FreeRTOS\TP_FreeRTOS\MXTmpFiles\rtos_pfp.tmp_save
+2025-04-10 08:51:47,285 [INFO] CodeEngine:279 - Generated code: C:\Users\debor\OneDrive\Desktop\ENSEA\ENSEA_24-25\Semestre_10\Noyau_temps_reel\FreeRTOS\TP_FreeRTOS\MXTmpFiles\rtos_pfp.tmp
+2025-04-10 08:51:47,291 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\debor\OneDrive\Desktop\ENSEA\ENSEA_24-25\Semestre_10\Noyau_temps_reel\FreeRTOS\TP_FreeRTOS\MXTmpFiles\rtos_obj_creat.tmp_save
+2025-04-10 08:51:47,375 [INFO] CodeEngine:279 - Generated code: C:\Users\debor\OneDrive\Desktop\ENSEA\ENSEA_24-25\Semestre_10\Noyau_temps_reel\FreeRTOS\TP_FreeRTOS\MXTmpFiles\rtos_obj_creat.tmp
+2025-04-10 08:51:47,385 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\debor\OneDrive\Desktop\ENSEA\ENSEA_24-25\Semestre_10\Noyau_temps_reel\FreeRTOS\TP_FreeRTOS\MXTmpFiles\rtos_kernelStart.tmp_save
+2025-04-10 08:51:47,463 [INFO] CodeEngine:279 - Generated code: C:\Users\debor\OneDrive\Desktop\ENSEA\ENSEA_24-25\Semestre_10\Noyau_temps_reel\FreeRTOS\TP_FreeRTOS\MXTmpFiles\rtos_kernelStart.tmp
+2025-04-10 08:51:47,470 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\debor\OneDrive\Desktop\ENSEA\ENSEA_24-25\Semestre_10\Noyau_temps_reel\FreeRTOS\TP_FreeRTOS\MXTmpFiles\rtos_default_thread.tmp_save
+2025-04-10 08:51:47,547 [INFO] CodeEngine:279 - Generated code: C:\Users\debor\OneDrive\Desktop\ENSEA\ENSEA_24-25\Semestre_10\Noyau_temps_reel\FreeRTOS\TP_FreeRTOS\MXTmpFiles\rtos_default_thread.tmp
+2025-04-10 08:51:47,553 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\debor\OneDrive\Desktop\ENSEA\ENSEA_24-25\Semestre_10\Noyau_temps_reel\FreeRTOS\TP_FreeRTOS\MXTmpFiles\rtos_threads.tmp_save
+2025-04-10 08:51:47,627 [INFO] CodeEngine:279 - Generated code: C:\Users\debor\OneDrive\Desktop\ENSEA\ENSEA_24-25\Semestre_10\Noyau_temps_reel\FreeRTOS\TP_FreeRTOS\MXTmpFiles\rtos_threads.tmp
+2025-04-10 08:51:47,637 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\debor\OneDrive\Desktop\ENSEA\ENSEA_24-25\Semestre_10\Noyau_temps_reel\FreeRTOS\TP_FreeRTOS\Core\Inc\FreeRTOSConfig.h_save
+2025-04-10 08:51:47,766 [INFO] CodeEngine:279 - Generated code: C:\Users\debor\OneDrive\Desktop\ENSEA\ENSEA_24-25\Semestre_10\Noyau_temps_reel\FreeRTOS\TP_FreeRTOS\Core\Inc\FreeRTOSConfig.h
+2025-04-10 08:51:47,772 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\debor\OneDrive\Desktop\ENSEA\ENSEA_24-25\Semestre_10\Noyau_temps_reel\FreeRTOS\TP_FreeRTOS\Core\Src\freertos.c_save
+2025-04-10 08:51:47,872 [INFO] CodeEngine:279 - Generated code: C:\Users\debor\OneDrive\Desktop\ENSEA\ENSEA_24-25\Semestre_10\Noyau_temps_reel\FreeRTOS\TP_FreeRTOS\Core\Src\freertos.c
+2025-04-10 08:51:47,883 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\debor\OneDrive\Desktop\ENSEA\ENSEA_24-25\Semestre_10\Noyau_temps_reel\FreeRTOS\TP_FreeRTOS\MXTmpFiles\cortex.tmp_save
+2025-04-10 08:51:47,940 [INFO] CodeEngine:279 - Generated code: C:\Users\debor\OneDrive\Desktop\ENSEA\ENSEA_24-25\Semestre_10\Noyau_temps_reel\FreeRTOS\TP_FreeRTOS\MXTmpFiles\cortex.tmp
+2025-04-10 08:51:47,950 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\debor\OneDrive\Desktop\ENSEA\ENSEA_24-25\Semestre_10\Noyau_temps_reel\FreeRTOS\TP_FreeRTOS\Core\Src\usart.c_save
+2025-04-10 08:51:48,036 [INFO] CodeEngine:279 - Generated code: C:\Users\debor\OneDrive\Desktop\ENSEA\ENSEA_24-25\Semestre_10\Noyau_temps_reel\FreeRTOS\TP_FreeRTOS\Core\Src\usart.c
+2025-04-10 08:51:48,041 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\debor\OneDrive\Desktop\ENSEA\ENSEA_24-25\Semestre_10\Noyau_temps_reel\FreeRTOS\TP_FreeRTOS\Core\Inc\usart.h_save
+2025-04-10 08:51:48,125 [INFO] CodeEngine:279 - Generated code: C:\Users\debor\OneDrive\Desktop\ENSEA\ENSEA_24-25\Semestre_10\Noyau_temps_reel\FreeRTOS\TP_FreeRTOS\Core\Inc\usart.h
+2025-04-10 08:51:48,142 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\debor\OneDrive\Desktop\ENSEA\ENSEA_24-25\Semestre_10\Noyau_temps_reel\FreeRTOS\TP_FreeRTOS\Core\Src\stm32f7xx_it.c_save
+2025-04-10 08:51:48,338 [INFO] CodeEngine:279 - Generated code: C:\Users\debor\OneDrive\Desktop\ENSEA\ENSEA_24-25\Semestre_10\Noyau_temps_reel\FreeRTOS\TP_FreeRTOS\Core\Src\stm32f7xx_it.c
+2025-04-10 08:51:48,351 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\debor\OneDrive\Desktop\ENSEA\ENSEA_24-25\Semestre_10\Noyau_temps_reel\FreeRTOS\TP_FreeRTOS\Core\Inc\stm32f7xx_it.h_save
+2025-04-10 08:51:48,456 [INFO] CodeEngine:279 - Generated code: C:\Users\debor\OneDrive\Desktop\ENSEA\ENSEA_24-25\Semestre_10\Noyau_temps_reel\FreeRTOS\TP_FreeRTOS\Core\Inc\stm32f7xx_it.h
+2025-04-10 08:51:48,479 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\debor\OneDrive\Desktop\ENSEA\ENSEA_24-25\Semestre_10\Noyau_temps_reel\FreeRTOS\TP_FreeRTOS\Core\Src\stm32f7xx_hal_msp.c_save
+2025-04-10 08:51:48,621 [INFO] CodeEngine:279 - Generated code: C:\Users\debor\OneDrive\Desktop\ENSEA\ENSEA_24-25\Semestre_10\Noyau_temps_reel\FreeRTOS\TP_FreeRTOS\Core\Src\stm32f7xx_hal_msp.c
+2025-04-10 08:51:48,630 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\debor\OneDrive\Desktop\ENSEA\ENSEA_24-25\Semestre_10\Noyau_temps_reel\FreeRTOS\TP_FreeRTOS\MXTmpFiles\system.tmp_save
+2025-04-10 08:51:48,696 [INFO] CodeEngine:279 - Generated code: C:\Users\debor\OneDrive\Desktop\ENSEA\ENSEA_24-25\Semestre_10\Noyau_temps_reel\FreeRTOS\TP_FreeRTOS\MXTmpFiles\system.tmp
+2025-04-10 08:51:48,720 [INFO] CodeEngine:311 - oldGeneratedFile, C:\Users\debor\OneDrive\Desktop\ENSEA\ENSEA_24-25\Semestre_10\Noyau_temps_reel\FreeRTOS\TP_FreeRTOS\Core\Inc\stm32f7xx_hal_conf.h_save
+2025-04-10 08:51:48,826 [INFO] CodeEngine:335 - Generated code: C:\Users\debor\OneDrive\Desktop\ENSEA\ENSEA_24-25\Semestre_10\Noyau_temps_reel\FreeRTOS\TP_FreeRTOS\Core\Inc\stm32f7xx_hal_conf.h
+2025-04-10 08:51:48,871 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\debor\OneDrive\Desktop\ENSEA\ENSEA_24-25\Semestre_10\Noyau_temps_reel\FreeRTOS\TP_FreeRTOS\Core\Inc\main.h_save
+2025-04-10 08:51:48,986 [INFO] CodeEngine:279 - Generated code: C:\Users\debor\OneDrive\Desktop\ENSEA\ENSEA_24-25\Semestre_10\Noyau_temps_reel\FreeRTOS\TP_FreeRTOS\Core\Inc\main.h
+2025-04-10 08:51:48,992 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\debor\OneDrive\Desktop\ENSEA\ENSEA_24-25\Semestre_10\Noyau_temps_reel\FreeRTOS\TP_FreeRTOS\Core\Src\main.c_save
+2025-04-10 08:51:49,118 [INFO] CodeEngine:279 - Generated code: C:\Users\debor\OneDrive\Desktop\ENSEA\ENSEA_24-25\Semestre_10\Noyau_temps_reel\FreeRTOS\TP_FreeRTOS\Core\Src\main.c
+2025-04-10 08:51:49,542 [INFO] ProjectBuilder:3289 - Time for Copy HAL[1] : 221mS.
+2025-04-10 08:51:49,549 [INFO] ProjectBuilder:4876 - Project Generator version: 4.5.0-RC5
+2025-04-10 08:51:49,612 [INFO] ConfigFileManager:1579 - The Die is : DIE449
+2025-04-10 08:51:50,828 [INFO] ProjectBuilder:5154 - Time for Generating toolchain IDE Files: 1280mS.
+2025-04-10 08:51:50,829 [INFO] ProjectBuilder:3146 - Time for Copy CMSIS : 1mS.
+2025-04-10 08:51:50,841 [INFO] ProjectBuilder:3146 - Time for Copy CMSIS : 0mS.
+2025-04-10 10:04:53,359 [INFO] WebApp:190 - Connection lost
+2025-04-10 10:04:53,564 [INFO] WebApp:187 - Connection restablished
+2025-04-10 11:42:29,847 [INFO] WebApp:190 - Connection lost
+2025-04-10 11:42:30,251 [INFO] WebApp:187 - Connection restablished
+2025-04-10 12:07:54,894 [INFO] WebApp:190 - Connection lost
+2025-04-10 12:07:55,042 [INFO] WebApp:187 - Connection restablished
+2025-04-10 12:08:05,368 [INFO] WebApp:190 - Connection lost
+2025-04-10 12:08:05,503 [INFO] WebApp:187 - Connection restablished
+2025-04-10 12:38:24,879 [INFO] WebApp:190 - Connection lost
+2025-04-10 12:38:25,026 [INFO] WebApp:187 - Connection restablished
+2025-04-10 13:33:09,251 [INFO] WebApp:190 - Connection lost
+2025-04-10 13:33:12,068 [INFO] WebApp:187 - Connection restablished
+2025-04-10 13:33:19,811 [INFO] WebApp:190 - Connection lost
+2025-04-10 13:33:19,900 [INFO] WebApp:187 - Connection restablished
+2025-04-10 14:09:25,014 [INFO] WebApp:190 - Connection lost
+2025-04-10 14:09:25,281 [INFO] WebApp:187 - Connection restablished
+2025-04-10 14:12:48,319 [INFO] WebApp:190 - Connection lost
+2025-04-10 14:12:48,445 [INFO] WebApp:187 - Connection restablished
+2025-04-10 14:39:26,323 [INFO] WebApp:190 - Connection lost
+2025-04-10 14:39:26,469 [INFO] WebApp:187 - Connection restablished
+2025-04-10 14:53:45,820 [INFO] WebApp:190 - Connection lost
+2025-04-10 14:53:45,947 [INFO] WebApp:187 - Connection restablished
+2025-04-10 17:14:56,146 [INFO] WebApp:190 - Connection lost
+2025-04-10 17:14:56,641 [INFO] WebApp:187 - Connection restablished
+2025-04-10 17:16:05,862 [INFO] WebApp:190 - Connection lost
+2025-04-10 17:16:06,069 [INFO] WebApp:187 - Connection restablished
+2025-04-10 17:16:53,363 [INFO] WebApp:190 - Connection lost
+2025-04-10 17:16:53,578 [INFO] WebApp:187 - Connection restablished
+2025-04-10 17:19:54,853 [INFO] WebApp:190 - Connection lost
+2025-04-10 17:19:55,112 [INFO] WebApp:187 - Connection restablished
+2025-04-10 19:07:07,477 [INFO] WebApp:190 - Connection lost
+2025-04-10 19:07:11,194 [INFO] WebApp:187 - Connection restablished
