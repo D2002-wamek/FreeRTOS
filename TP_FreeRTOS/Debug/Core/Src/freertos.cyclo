@@ -3,4 +3,4 @@
 ../Core/Src/freertos.c:89:6:MX_FREERTOS_Init	1
 ../Core/Src/freertos.c:140:6:StartDefaultTask	1
 ../Core/Src/freertos.c:159:6:StartTaskGive	1
-../Core/Src/freertos.c:173:6:StartTaskTake	2
+../Core/Src/freertos.c:177:6:StartTaskTake	3

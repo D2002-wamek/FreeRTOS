@@ -176,9 +176,6 @@ void StartTaskGive(void const * argument)
 
 void StartTaskTake(void const * argument)
 {
-  /* Important : Attendre un peu avant de commencer */
-  osDelay(200); // 200 ms pour laisser taskGive démarrer
-
   for(;;)
   {
     printf("[taskTake] Avant de prendre le semaphore.\r\n");
@@ -193,13 +190,9 @@ void StartTaskTake(void const * argument)
     {
       printf("[taskTake] ERREUR: Timeout lors de l'attente du semaphore ! RESET.\r\n");
 
-      // Attendre que l'UART ait fini d'envoyer
-      while(HAL_UART_GetState(&huart1) != HAL_UART_STATE_READY)
-      {
-      }
-      HAL_Delay(50);
+      HAL_Delay(100); // Petit délai pour UART
 
-      NVIC_SystemReset();
+      NVIC_SystemReset(); // Reset logiciel
     }
     else
     {
