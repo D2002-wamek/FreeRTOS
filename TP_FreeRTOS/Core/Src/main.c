@@ -118,17 +118,6 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-
-	  if (HAL_GPIO_ReadPin(GPIOI, GPIO_PIN_11) == GPIO_PIN_SET)
-	      {
-	          HAL_GPIO_WritePin(GPIOI, GPIO_PIN_1, GPIO_PIN_SET); // Allumer la LED
-	      }
-	      else
-	      {
-	          HAL_GPIO_WritePin(GPIOI, GPIO_PIN_1, GPIO_PIN_RESET); // Éteindre la LED
-	      }
-
-	      HAL_Delay(10); // Anti-rebond simple
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */

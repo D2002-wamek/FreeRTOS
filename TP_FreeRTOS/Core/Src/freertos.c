@@ -47,6 +47,7 @@
 /* Private variables ---------------------------------------------------------*/
 /* USER CODE BEGIN Variables */
 osThreadId ledTaskHandle;
+osSemaphoreId myBinarySemHandle;
 
 /* USER CODE END Variables */
 osThreadId defaultTaskHandle;
@@ -54,7 +55,11 @@ osThreadId defaultTaskHandle;
 /* Private function prototypes -----------------------------------------------*/
 /* USER CODE BEGIN FunctionPrototypes */
 
+
 /* USER CODE END FunctionPrototypes */
+void StartTaskGive(void const * argument);
+void StartTaskTake(void const * argument);
+
 
 void StartDefaultTask(void const * argument);
 
@@ -92,6 +97,10 @@ void MX_FREERTOS_Init(void) {
 
   /* USER CODE BEGIN RTOS_SEMAPHORES */
   /* add semaphores, ... */
+  /* Création du sémaphore */
+  osSemaphoreDef(myBinarySem);
+  myBinarySemHandle = osSemaphoreCreate(osSemaphore(myBinarySem), 1); // 1 = Sémaphore disponible au début
+
   /* USER CODE END RTOS_SEMAPHORES */
 
   /* USER CODE BEGIN RTOS_TIMERS */
@@ -107,9 +116,15 @@ void MX_FREERTOS_Init(void) {
   osThreadDef(defaultTask, StartDefaultTask, osPriorityNormal, 0, 128);
   defaultTaskHandle = osThreadCreate(osThread(defaultTask), NULL);
 
+
   /* USER CODE BEGIN RTOS_THREADS */
   /* add threads, ... */
-
+  /* Création de la tâche taskTake */
+   osThreadDef(taskTake, StartTaskTake, osPriorityNormal, 0, 128);
+   osThreadCreate(osThread(taskTake), NULL);
+   /* Création de la tâche taskGive */
+   osThreadDef(taskGive, StartTaskGive, osPriorityBelowNormal, 0, 128);
+   osThreadCreate(osThread(taskGive), NULL);
 
   /* USER CODE END RTOS_THREADS */
 
@@ -141,6 +156,32 @@ void StartDefaultTask(void const * argument)
 
 /* Private application code --------------------------------------------------*/
 /* USER CODE BEGIN Application */
+void StartTaskGive(void const * argument)
+{
+  for(;;)
+  {
+    printf("taskGive avant de donner le semaphore.\r\n");
+
+    osSemaphoreRelease(myBinarySemHandle);
+
+    printf("taskGive apres avoir donne le semaphore.\r\n");
+
+    osDelay(100); // 100 ms
+  }
+}
+
+void StartTaskTake(void const * argument)
+{
+  for(;;)
+  {
+    printf("taskTake avant de prendre le semaphore.\r\n");
+
+    if(osSemaphoreWait(myBinarySemHandle, osWaitForever) == osOK)
+    {
+      printf("taskTake Semaphore pris avec succes.\r\n");
+    }
+  }
+}
 
 /* USER CODE END Application */
 
