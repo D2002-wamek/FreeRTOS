@@ -174,17 +174,17 @@ void StartTaskTake(void const * argument)
 {
   for(;;)
   {
-    printf("[taskTake] Avant de prendre le semaphore.\r\n");
+    printf("[taskTake] Avant de prendre le sémaphore.\r\n");
 
     int32_t result = osSemaphoreWait(myBinarySemHandle, 1000); // 1000 ms timeout
 
     if(result > 0)
     {
-      printf("[taskTake] Semaphore pris avec succes.\r\n");
+      printf("[taskTake] Sémaphore pris avec succès.\r\n");
     }
     else if(result == 0)
     {
-      printf("[taskTake] ERREUR: Timeout lors de l'attente du semaphore ! RESET.\r\n");
+      printf("[taskTake] ERREUR: Timeout lors de l'attente du sémaphore ! RESET.\r\n");
 
       HAL_Delay(100); // Petit délai pour UART
 
@@ -192,7 +192,7 @@ void StartTaskTake(void const * argument)
     }
     else
     {
-      printf("[taskTake] ERREUR: Probleme avec osSemaphoreWait().\r\n");
+      printf("[taskTake] ERREUR: Problème avec osSemaphoreWait().\r\n");
     }
   }
 }

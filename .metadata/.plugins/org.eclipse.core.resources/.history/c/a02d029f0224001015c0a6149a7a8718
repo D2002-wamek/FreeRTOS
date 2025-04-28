@@ -174,29 +174,14 @@ void StartTaskTake(void const * argument)
 {
   for(;;)
   {
-    printf("[taskTake] Avant de prendre le semaphore.\r\n");
+    printf("taskTake avant de prendre le semaphore.\r\n");
 
-    int32_t result = osSemaphoreWait(myBinarySemHandle, 1000); // 1000 ms timeout
-
-    if(result > 0)
+    if(osSemaphoreWait(myBinarySemHandle, osWaitForever) == osOK)
     {
-      printf("[taskTake] Semaphore pris avec succes.\r\n");
-    }
-    else if(result == 0)
-    {
-      printf("[taskTake] ERREUR: Timeout lors de l'attente du semaphore ! RESET.\r\n");
-
-      HAL_Delay(100); // Petit délai pour UART
-
-      NVIC_SystemReset(); // Reset logiciel
-    }
-    else
-    {
-      printf("[taskTake] ERREUR: Probleme avec osSemaphoreWait().\r\n");
+      printf("taskTake Semaphore pris avec succes.\r\n");
     }
   }
 }
-
 
 /* USER CODE END Application */
 
