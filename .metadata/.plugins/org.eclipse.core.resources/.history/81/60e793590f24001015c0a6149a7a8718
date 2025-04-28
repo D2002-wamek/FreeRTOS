@@ -129,8 +129,6 @@ void MX_FREERTOS_Init(void) {
    osThreadDef(taskTake, StartTaskTake, osPriorityNormal, 0, 128);
    osThreadCreate(osThread(taskTake), NULL);
 
-
-
   /* USER CODE END RTOS_THREADS */
 
 }

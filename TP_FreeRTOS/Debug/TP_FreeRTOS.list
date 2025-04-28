@@ -453,12 +453,12 @@ void MX_FREERTOS_Init(void) {
  800057a:	4603      	mov	r3, r0
  800057c:	4a1b      	ldr	r2, [pc, #108]	@ (80005ec <MX_FREERTOS_Init+0x8c>)
  800057e:	6013      	str	r3, [r2, #0]
-  /* add queues, ... */
   /* USER CODE END RTOS_QUEUES */
 
   /* Create the thread(s) */
   /* definition and creation of defaultTask */
-  osThreadDef(defaultTask, StartDefaultTask, osPriorityNormal, 0, 128);
+  // Créer la tâche de clignotement de LED en priorité basse
+  osThreadDef(defaultTask, StartDefaultTask, osPriorityBelowNormal, 0, 128);
  8000580:	4b1b      	ldr	r3, [pc, #108]	@ (80005f0 <MX_FREERTOS_Init+0x90>)
  8000582:	f107 043c 	add.w	r4, r7, #60	@ 0x3c
  8000586:	461d      	mov	r5, r3
@@ -475,11 +475,11 @@ void MX_FREERTOS_Init(void) {
  80005a2:	4a14      	ldr	r2, [pc, #80]	@ (80005f4 <MX_FREERTOS_Init+0x94>)
  80005a4:	6013      	str	r3, [r2, #0]
 
-
   /* USER CODE BEGIN RTOS_THREADS */
   /* add threads, ... */
-  /* Création de la tâche taskTake */
-   osThreadDef(taskTake, StartTaskTake, osPriorityNormal, 0, 128);
+   /* Création de la tâche taskGive */
+   // Créer la tâche qui donne le sémaphore en priorité haute
+   osThreadDef(taskGive, StartTaskGive, osPriorityAboveNormal, 0, 128);
  80005a6:	4b14      	ldr	r3, [pc, #80]	@ (80005f8 <MX_FREERTOS_Init+0x98>)
  80005a8:	f107 0420 	add.w	r4, r7, #32
  80005ac:	461d      	mov	r5, r3
@@ -487,13 +487,15 @@ void MX_FREERTOS_Init(void) {
  80005b0:	c40f      	stmia	r4!, {r0, r1, r2, r3}
  80005b2:	e895 0007 	ldmia.w	r5, {r0, r1, r2}
  80005b6:	e884 0007 	stmia.w	r4, {r0, r1, r2}
-   osThreadCreate(osThread(taskTake), NULL);
+   osThreadCreate(osThread(taskGive), NULL);
  80005ba:	f107 0320 	add.w	r3, r7, #32
  80005be:	2100      	movs	r1, #0
  80005c0:	4618      	mov	r0, r3
  80005c2:	f003 f8f4 	bl	80037ae <osThreadCreate>
-   /* Création de la tâche taskGive */
-   osThreadDef(taskGive, StartTaskGive, osPriorityBelowNormal, 0, 128);
+
+   /* Création de la tâche taskTake */
+   // Créer la tâche qui prend le sémaphore en priorité normale
+   osThreadDef(taskTake, StartTaskTake, osPriorityNormal, 0, 128);
  80005c6:	4b0d      	ldr	r3, [pc, #52]	@ (80005fc <MX_FREERTOS_Init+0x9c>)
  80005c8:	1d3c      	adds	r4, r7, #4
  80005ca:	461d      	mov	r5, r3
@@ -501,11 +503,13 @@ void MX_FREERTOS_Init(void) {
  80005ce:	c40f      	stmia	r4!, {r0, r1, r2, r3}
  80005d0:	e895 0007 	ldmia.w	r5, {r0, r1, r2}
  80005d4:	e884 0007 	stmia.w	r4, {r0, r1, r2}
-   osThreadCreate(osThread(taskGive), NULL);
+   osThreadCreate(osThread(taskTake), NULL);
  80005d8:	1d3b      	adds	r3, r7, #4
  80005da:	2100      	movs	r1, #0
  80005dc:	4618      	mov	r0, r3
  80005de:	f003 f8e6 	bl	80037ae <osThreadCreate>
+
+
 
   /* USER CODE END RTOS_THREADS */
 

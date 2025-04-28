@@ -113,23 +113,18 @@ void MX_FREERTOS_Init(void) {
 
   /* Create the thread(s) */
   /* definition and creation of defaultTask */
-  // Créer la tâche de clignotement de LED en priorité basse
-  osThreadDef(defaultTask, StartDefaultTask, osPriorityBelowNormal, 0, 128);
+  osThreadDef(defaultTask, StartDefaultTask, osPriorityNormal, 0, 128);
   defaultTaskHandle = osThreadCreate(osThread(defaultTask), NULL);
+
 
   /* USER CODE BEGIN RTOS_THREADS */
   /* add threads, ... */
-   /* Création de la tâche taskGive */
-   // Créer la tâche qui donne le sémaphore en priorité haute
-   osThreadDef(taskGive, StartTaskGive, osPriorityAboveNormal, 0, 128);
-   osThreadCreate(osThread(taskGive), NULL);
-
-   /* Création de la tâche taskTake */
-   // Créer la tâche qui prend le sémaphore en priorité normale
+  /* Création de la tâche taskTake */
    osThreadDef(taskTake, StartTaskTake, osPriorityNormal, 0, 128);
    osThreadCreate(osThread(taskTake), NULL);
-
-
+   /* Création de la tâche taskGive */
+   osThreadDef(taskGive, StartTaskGive, osPriorityBelowNormal, 0, 128);
+   osThreadCreate(osThread(taskGive), NULL);
 
   /* USER CODE END RTOS_THREADS */
 
