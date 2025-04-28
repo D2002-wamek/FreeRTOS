@@ -120,4 +120,101 @@ L'utilisation de cette macro garantit que le délai spécifié dans vTaskDelay()
 3., 4., 5., voir les commits du code
 
 6. Changez les priorités. Expliquez les changements dans l’affichage
-   
+
+Situation actuelle dans le code :
+osThreadDef(defaultTask, StartDefaultTask, osPriorityNormal, 0, 128);
+defaultTaskHandle = osThreadCreate(osThread(defaultTask), NULL);
+
+osThreadDef(taskTake, StartTaskTake, osPriorityNormal, 0, 128);
+osThreadCreate(osThread(taskTake), NULL);
+
+osThreadDef(taskGive, StartTaskGive, osPriorityBelowNormal, 0, 128);
+osThreadCreate(osThread(taskGive), NULL);
+
+
+Tâche       | Fonction associée | Priorité
+_________________________________________________
+defaultTask | StartDefaultTask  | osPriorityNormal
+__________________________________________________
+taskTake    | StartTaskTake     | osPriorityNormal
+_____________________________________________________
+taskGive    | StartTaskGive     | osPriorityBelowNormal
+
+Avant :
+
+==== Noyau temps reel ====
+LED change d'etat
+[taskGive] Avant de donner le semaphore.
+[taskGive] Semaphore donne.
+LED change d'etat
+[taskGive] Avant de donner le semaphore.
+[taskGive] Semaphore donne.
+[taskTake] Avant de prendre le semaphore.
+[taskTake] ERREUR: Timeout lors de l'attente du semaphore ! RESET.
+
+Changement de priorité:
+
+// Créer la tâche qui donne le sémaphore en priorité haute
+osThreadDef(taskGive, StartTaskGive, osPriorityAboveNormal, 0, 128);
+osThreadCreate(osThread(taskGive), NULL);
+
+// Créer la tâche qui prend le sémaphore en priorité normale
+osThreadDef(taskTake, StartTaskTake, osPriorityNormal, 0, 128);
+osThreadCreate(osThread(taskTake), NULL);
+
+// Créer la tâche de clignotement de LED en priorité basse
+osThreadDef(defaultTask, StartDefaultTask, osPriorityBelowNormal, 0, 128);
+defaultTaskHandle = osThreadCreate(osThread(defaultTask), NULL);
+
+Maintenant :
+
+==== Noyau temps reel ====
+[taskGive] Avant de donner le semaphore.
+[taskGive] Semaphore donne.
+LED change d'etat
+[taskGive] Avant de donner le semaphore.
+[taskGive] Semaphore donne.
+LED change d'etat
+[taskTake] Avant de prendre le semaphore.
+[taskTake] ERREUR: Timeout lors de l'attente du semaphore ! RESET.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
