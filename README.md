@@ -152,6 +152,13 @@ LED change d'etat
 [taskTake] Avant de prendre le semaphore.
 [taskTake] ERREUR: Timeout lors de l'attente du semaphore ! RESET.
 
+____________________________________________________
+taskGive est moins prioritaire, donc elle s'exécute quand les tâches normales ne demandent pas le processeur.
+LED (defaultTask) clignote régulièrement, car elle est en priorité normale.
+taskTake essaye de prendre le sémaphore... mais parfois il n’est pas donné à temps car taskGive est trop lente (priorité basse + délais qui augmentent).
+➔ Résultat : parfois taskTake timeout et fait un RESET.
+____________________________________________________
+
 Changement de priorité:
 
 // Créer la tâche qui donne le sémaphore en priorité haute
@@ -177,9 +184,14 @@ LED change d'etat
 LED change d'etat
 [taskTake] Avant de prendre le semaphore.
 [taskTake] ERREUR: Timeout lors de l'attente du semaphore ! RESET.
+____________________________________________________
+taskGive devient plus prioritaire que tout le monde.
+Dès qu’elle est prête à donner le sémaphore, elle interrompt taskTake ou defaultTask immédiatement si besoin.
+defaultTask (clignotement de LED) passe en priorité basse → elle tourne seulement si personne d'autre ne demande du CPU.
+____________________________________________________
 
-
-
+# 1.3 Notification
+7.Modifiez le code pour obtenir le même fonctionnement en utilisant des task notifications à la place des sémaphores
 
 
 
