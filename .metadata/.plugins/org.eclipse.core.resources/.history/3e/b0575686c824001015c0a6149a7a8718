@@ -18,11 +18,9 @@
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
+#include "cmsis_os.h"
 #include "usart.h"
 #include "gpio.h"
-#include "FreeRTOS.h"
-#include "queue.h"
-#include "usart.h"
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
@@ -112,9 +110,7 @@ int main(void)
   MX_FREERTOS_Init();
 
   /* Start scheduler */
-  //osKernelStart();
-  vTaskStartScheduler();
-
+  osKernelStart();
 
   /* We should never get here as control is now taken by the scheduler */
 

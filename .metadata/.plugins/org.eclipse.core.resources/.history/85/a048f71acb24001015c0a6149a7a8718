@@ -133,25 +133,18 @@ void MX_FREERTOS_Init(void) {
   * @retval None
   */
 /* USER CODE END Header_StartDefaultTask */
-void StartDefaultTask(void *argument)
+void StartDefaultTask(const * argument)
 {
   /* USER CODE BEGIN StartDefaultTask */
   /* Infinite loop */
-	  /*for(;;)
+	  for(;;)
 	  {
 	      HAL_GPIO_TogglePin(GPIOI, GPIO_PIN_1);
 	      printf("LED change d'etat\r\n");
 	      vTaskDelay(pdMS_TO_TICKS(100));
-	  }*/
-	  for (int i = 0; i < 5; i++)
-	    {
-	      HAL_GPIO_TogglePin(GPIOI, GPIO_PIN_1);
-	      printf("LED change d'etat (%d)\r\n", i + 1);
-	      vTaskDelay(pdMS_TO_TICKS(100));
-	    }
+	  }
 
   /* USER CODE END StartDefaultTask */
-	  vTaskDelete(NULL);
 }
 
 /* Private application code --------------------------------------------------*/
@@ -161,42 +154,45 @@ void StartTaskGive(void *argument)
 {
   uint32_t delay_time = 100;
 
-  printf("[taskGive] Avant envoi dans la queue.\r\n");
-
-  if (xQueueSend(myQueueHandle, &delay_time, pdMS_TO_TICKS(100)) == pdPASS)
+  for (;;)
   {
-    printf("[taskGive] Valeur %lu envoyee avec succes.\r\n", delay_time);
-  }
-  else
-  {
-    printf("[taskGive] ERREUR: Envoi dans queue echoue.\r\n");
-  }
+    printf("[taskGive] Avant envoi dans la queue.\r\n");
 
-  // Suspend la tâche définitivement
-  vTaskSuspend(NULL);
+    if (xQueueSend(myQueueHandle, &delay_time, pdMS_TO_TICKS(100)) == pdPASS)
+    {
+      printf("[taskGive] Valeur %lu envoyee avec succes.\r\n", delay_time);
+    }
+    else
+    {
+      printf("[taskGive] ERREUR: Envoi dans queue echoue.\r\n");
+    }
+
+    vTaskDelay(pdMS_TO_TICKS(delay_time));
+    delay_time += 100;
+  }
 }
-
 
 /* Tâche qui reçoit depuis la queue */
 void StartTaskTake(void *argument)
 {
   uint32_t received_value;
 
-  printf("[taskTake] En attente d'une valeur dans la queue...\r\n");
-
-  if (xQueueReceive(myQueueHandle, &received_value, pdMS_TO_TICKS(1000)) == pdPASS)
+  for (;;)
   {
-    printf("[taskTake] Valeur recue: %lu ms\r\n", received_value);
-  }
-  else
-  {
-    printf("[taskTake] Timeout de reception !\r\n");
-  }
+    printf("[taskTake] En attente d'une valeur dans la queue...\r\n");
 
-  // Suspend la tâche après réception
-  vTaskSuspend(NULL);
+    if (xQueueReceive(myQueueHandle, &received_value, pdMS_TO_TICKS(1000)) == pdPASS)
+    {
+      printf("[taskTake] Valeur recue: %lu ms\r\n", received_value);
+    }
+    else
+    {
+      printf("[taskTake] Timeout de reception ! RESET...\r\n");
+      HAL_Delay(100);
+      NVIC_SystemReset();
+    }
+  }
 }
-
 
 /* USER CODE END Application */
 

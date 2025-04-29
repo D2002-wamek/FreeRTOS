@@ -133,69 +133,25 @@ void MX_FREERTOS_Init(void) {
   * @retval None
   */
 /* USER CODE END Header_StartDefaultTask */
-void StartDefaultTask(void *argument)
+void StartDefaultTask(void const * argument)
 {
   /* USER CODE BEGIN StartDefaultTask */
   /* Infinite loop */
-	  /*for(;;)
+	  for(;;)
 	  {
-	      HAL_GPIO_TogglePin(GPIOI, GPIO_PIN_1);
-	      printf("LED change d'etat\r\n");
-	      vTaskDelay(pdMS_TO_TICKS(100));
-	  }*/
-	  for (int i = 0; i < 5; i++)
-	    {
-	      HAL_GPIO_TogglePin(GPIOI, GPIO_PIN_1);
-	      printf("LED change d'etat (%d)\r\n", i + 1);
-	      vTaskDelay(pdMS_TO_TICKS(100));
-	    }
+	    HAL_GPIO_TogglePin(GPIOI, GPIO_PIN_1); // Changer l'état de la LED
+
+	    char msg[] = "LED change d'etat\r\n";
+	    HAL_UART_Transmit(&huart1, (uint8_t*)msg, sizeof(msg)-1, HAL_MAX_DELAY);
+
+	    osDelay(100 / portTICK_PERIOD_MS); // Pause de 100 ms
+	  }
 
   /* USER CODE END StartDefaultTask */
-	  vTaskDelete(NULL);
 }
 
 /* Private application code --------------------------------------------------*/
 /* USER CODE BEGIN Application */
-/* Tâche qui envoie dans la queue */
-void StartTaskGive(void *argument)
-{
-  uint32_t delay_time = 100;
-
-  printf("[taskGive] Avant envoi dans la queue.\r\n");
-
-  if (xQueueSend(myQueueHandle, &delay_time, pdMS_TO_TICKS(100)) == pdPASS)
-  {
-    printf("[taskGive] Valeur %lu envoyee avec succes.\r\n", delay_time);
-  }
-  else
-  {
-    printf("[taskGive] ERREUR: Envoi dans queue echoue.\r\n");
-  }
-
-  // Suspend la tâche définitivement
-  vTaskSuspend(NULL);
-}
-
-
-/* Tâche qui reçoit depuis la queue */
-void StartTaskTake(void *argument)
-{
-  uint32_t received_value;
-
-  printf("[taskTake] En attente d'une valeur dans la queue...\r\n");
-
-  if (xQueueReceive(myQueueHandle, &received_value, pdMS_TO_TICKS(1000)) == pdPASS)
-  {
-    printf("[taskTake] Valeur recue: %lu ms\r\n", received_value);
-  }
-  else
-  {
-    printf("[taskTake] Timeout de reception !\r\n");
-  }
-
-  // Suspend la tâche après réception
-  vTaskSuspend(NULL);
-}
 
 
 /* USER CODE END Application */
