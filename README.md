@@ -191,10 +191,20 @@ defaultTask (clignotement de LED) passe en priorité basse → elle tourne seule
 ____________________________________________________
 
 # 1.3 Notification
-7.Modifiez le code pour obtenir le même fonctionnement en utilisant des task notifications à la place des sémaphores
+7.Modifiez le code pour obtenir le même fonctionnement en utilisant des task notifications à la place des sémaphores (voir le commit)
 
+# 1.4 Queues
+8. Modifiez TaskGive pour envoyer dans une queue la valeur du timer. Modifiez TaskTake pour réceptionner et afficher cette valeur.( voir le commit)
 
-
+# 1.5 Réentrance et exclusion mutuelle
+9. Recopiez le code ci-dessus – au bon endroit – dans votre code.
+10. Observez attentivement la sortie dans la console. Expliquez d’où vient le problème.
+    Ce comportement indique que de nouvelles tâches taskTake et taskGive semblent s'exécuter en boucle,
+    alors que dans ta version précédente, elles s'exécutaient une seule     fois et se suspendaient.
+    Ces deux tâches (Tache 1 et Tache 2) écrivent en même temps dans la console UART via printf(), ce qui cause :
+Des messages corrompus ou mélangés (ex: Je skTake] Valeur recue:).
+Une surcharge du port série, car les deux tâches ont des delays très courts (1 et 2 ticks ≈ 1 à 2 ms).
+Une compétition d’accès au printf(), qui utilise USART (périphérique partagé).
 
 
 
