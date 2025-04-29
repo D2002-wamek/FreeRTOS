@@ -1,0 +1,211 @@
+/* USER CODE BEGIN Header */
+/**
+  ******************************************************************************
+  * File Name          : freertos.c
+  * Description        : Code for freertos applications
+  ******************************************************************************
+  * @attention
+  *
+  * Copyright (c) 2025 STMicroelectronics.
+  * All rights reserved.
+  *
+  * This software is licensed under terms that can be found in the LICENSE file
+  * in the root directory of this software component.
+  * If no LICENSE file comes with this software, it is provided AS-IS.
+  *
+  ******************************************************************************
+  */
+/* USER CODE END Header */
+
+/* Includes ------------------------------------------------------------------*/
+#include "FreeRTOS.h"
+#include "task.h"
+#include "main.h"
+#include "cmsis_os.h"
+#include "usart.h"
+
+/* Private includes ----------------------------------------------------------*/
+/* USER CODE BEGIN Includes */
+
+/* USER CODE END Includes */
+
+/* Private typedef -----------------------------------------------------------*/
+/* USER CODE BEGIN PTD */
+
+/* USER CODE END PTD */
+
+/* Private define ------------------------------------------------------------*/
+/* USER CODE BEGIN PD */
+
+/* USER CODE END PD */
+
+/* Private macro -------------------------------------------------------------*/
+/* USER CODE BEGIN PM */
+
+/* USER CODE END PM */
+
+/* Private variables ---------------------------------------------------------*/
+/* USER CODE BEGIN Variables */
+osThreadId ledTaskHandle;
+osSemaphoreId myBinarySemHandle;
+osThreadId taskTakeHandle;
+//osThreadId defaultTaskHandle;
+osThreadId taskGiveHandle;
+osThreadId taskTakeHandle;
+
+
+
+/* USER CODE END Variables */
+osThreadId defaultTaskHandle;
+
+/* Private function prototypes -----------------------------------------------*/
+/* USER CODE BEGIN FunctionPrototypes */
+
+
+/* USER CODE END FunctionPrototypes */
+void StartTaskGive(void const * argument);
+void StartTaskTake(void const * argument);
+
+
+void StartDefaultTask(void const * argument);
+
+void MX_FREERTOS_Init(void); /* (MISRA C 2004 rule 8.1) */
+
+/* GetIdleTaskMemory prototype (linked to static allocation support) */
+void vApplicationGetIdleTaskMemory( StaticTask_t **ppxIdleTaskTCBBuffer, StackType_t **ppxIdleTaskStackBuffer, uint32_t *pulIdleTaskStackSize );
+
+/* USER CODE BEGIN GET_IDLE_TASK_MEMORY */
+static StaticTask_t xIdleTaskTCBBuffer;
+static StackType_t xIdleStack[configMINIMAL_STACK_SIZE];
+
+void vApplicationGetIdleTaskMemory( StaticTask_t **ppxIdleTaskTCBBuffer, StackType_t **ppxIdleTaskStackBuffer, uint32_t *pulIdleTaskStackSize )
+{
+  *ppxIdleTaskTCBBuffer = &xIdleTaskTCBBuffer;
+  *ppxIdleTaskStackBuffer = &xIdleStack[0];
+  *pulIdleTaskStackSize = configMINIMAL_STACK_SIZE;
+  /* place for user code */
+}
+/* USER CODE END GET_IDLE_TASK_MEMORY */
+
+/**
+  * @brief  FreeRTOS initialization
+  * @param  None
+  * @retval None
+  */
+void MX_FREERTOS_Init(void) {
+  /* USER CODE BEGIN Init */
+
+  /* USER CODE END Init */
+
+  /* USER CODE BEGIN RTOS_MUTEX */
+  /* add mutexes, ... */
+  /* USER CODE END RTOS_MUTEX */
+
+  /* USER CODE BEGIN RTOS_SEMAPHORES */
+  /* add semaphores, ... */
+  /* Création du sémaphore */
+  //osSemaphoreDef(myBinarySem);
+  //myBinarySemHandle = osSemaphoreCreate(osSemaphore(myBinarySem), 1); // 1 = Sémaphore disponible au début
+
+  /* USER CODE END RTOS_SEMAPHORES */
+
+  /* USER CODE BEGIN RTOS_TIMERS */
+  /* start timers, add new ones, ... */
+  /* USER CODE END RTOS_TIMERS */
+
+  /* USER CODE BEGIN RTOS_QUEUES */
+  /* add queues, ... */
+  /* USER CODE END RTOS_QUEUES */
+
+  /* Create the thread(s) */
+  /* definition and creation of defaultTask */
+  // Crée defaultTask (LED qui clignote) en priorité normale
+  osThreadDef(defaultTask, StartDefaultTask, osPriorityNormal, 0, 128);
+  defaultTaskHandle = osThreadCreate(osThread(defaultTask), NULL);
+
+  /* USER CODE BEGIN RTOS_THREADS */
+  /* add threads, ... */
+   /* Création de la tâche taskGive */
+  // Crée taskGive (donne la notification) en priorité haute
+  osThreadDef(taskGive, StartTaskGive, osPriorityAboveNormal, 0, 128);
+  taskGiveHandle = osThreadCreate(osThread(taskGive), NULL);
+
+   /* Création de la tâche taskTake */
+   // Crée taskTake (attend la notification) en priorité basse
+   osThreadDef(taskTake, StartTaskTake, osPriorityBelowNormal, 0, 128);
+   taskTakeHandle = osThreadCreate(osThread(taskTake), NULL);
+
+
+  /* USER CODE END RTOS_THREADS */
+
+}
+
+/* USER CODE BEGIN Header_StartDefaultTask */
+/**
+  * @brief  Function implementing the defaultTask thread.
+  * @param  argument: Not used
+  * @retval None
+  */
+/* USER CODE END Header_StartDefaultTask */
+void StartDefaultTask(void const * argument)
+{
+  /* USER CODE BEGIN StartDefaultTask */
+  /* Infinite loop */
+	  for(;;)
+	  {
+	    HAL_GPIO_TogglePin(GPIOI, GPIO_PIN_1); // Changer l'état de la LED
+
+	    char msg[] = "LED change d'etat\r\n";
+	    HAL_UART_Transmit(&huart1, (uint8_t*)msg, sizeof(msg)-1, HAL_MAX_DELAY);
+
+	    osDelay(100 / portTICK_PERIOD_MS); // Pause de 100 ms
+	  }
+
+  /* USER CODE END StartDefaultTask */
+}
+
+/* Private application code --------------------------------------------------*/
+/* USER CODE BEGIN Application */
+
+void StartTaskGive(void const * argument)
+{
+  uint32_t delay_time = 100; // Temps initial en ms
+
+  for(;;)
+  {
+    printf("[taskGive] Avant d'envoyer la notification.\r\n");
+
+    xTaskNotifyGive(taskTakeHandle); // Notification envoyée à taskTake
+
+    printf("[taskGive] Notification envoyee.\r\n");
+
+    osDelay(delay_time / portTICK_PERIOD_MS);
+    delay_time += 100;
+  }
+}
+
+
+void StartTaskTake(void const * argument)
+{
+  for(;;)
+  {
+    printf("[taskTake] Avant de recevoir la notification.\r\n");
+
+    // Attend la notification pendant 1000 ms (1 seconde)
+    uint32_t result = ulTaskNotifyTake(pdTRUE, pdMS_TO_TICKS(1000));
+
+    if(result > 0)
+    {
+      printf("[taskTake] Notification recue avec succes.\r\n");
+    }
+    else
+    {
+      printf("[taskTake] ERREUR: Timeout lors de l'attente de la notification ! RESET.\r\n");
+      HAL_Delay(100); // Petit délai pour que UART termine
+      NVIC_SystemReset();
+    }
+  }
+}
+
+/* USER CODE END Application */
+

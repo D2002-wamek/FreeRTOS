@@ -1,6 +1,6 @@
 ../Drivers/CMSIS/Include/core_cm7.h:2147:34:__NVIC_SystemReset	4	static,ignoring_inline_asm
-../Core/Src/freertos.c:75:6:vApplicationGetIdleTaskMemory	24	static
-../Core/Src/freertos.c:89:6:MX_FREERTOS_Init	112	static
-../Core/Src/freertos.c:145:6:StartDefaultTask	48	static
-../Core/Src/freertos.c:164:6:StartTaskGive	24	static
-../Core/Src/freertos.c:182:6:StartTaskTake	24	static
+../Core/Src/freertos.c:81:6:vApplicationGetIdleTaskMemory	24	static
+../Core/Src/freertos.c:95:6:MX_FREERTOS_Init	104	static
+../Core/Src/freertos.c:150:6:StartDefaultTask	48	static
+../Core/Src/freertos.c:170:6:StartTaskGive	24	static
+../Core/Src/freertos.c:188:6:StartTaskTake	24	static

@@ -47,7 +47,13 @@
 /* Private variables ---------------------------------------------------------*/
 /* USER CODE BEGIN Variables */
 osThreadId ledTaskHandle;
-osSemaphoreId myBinarySemHandle;
+//osSemaphoreId myBinarySemHandle;
+//osThreadId taskTakeHandle;
+//osThreadId defaultTaskHandle;
+osThreadId taskGiveHandle;
+osThreadId taskTakeHandle;
+
+
 
 /* USER CODE END Variables */
 osThreadId defaultTaskHandle;
@@ -98,8 +104,8 @@ void MX_FREERTOS_Init(void) {
   /* USER CODE BEGIN RTOS_SEMAPHORES */
   /* add semaphores, ... */
   /* Création du sémaphore */
-  osSemaphoreDef(myBinarySem);
-  myBinarySemHandle = osSemaphoreCreate(osSemaphore(myBinarySem), 1); // 1 = Sémaphore disponible au début
+  //osSemaphoreDef(myBinarySem);
+  //myBinarySemHandle = osSemaphoreCreate(osSemaphore(myBinarySem), 1); // 1 = Sémaphore disponible au début
 
   /* USER CODE END RTOS_SEMAPHORES */
 
@@ -113,22 +119,21 @@ void MX_FREERTOS_Init(void) {
 
   /* Create the thread(s) */
   /* definition and creation of defaultTask */
-  // Créer la tâche de clignotement de LED en priorité basse
-  osThreadDef(defaultTask, StartDefaultTask, osPriorityBelowNormal, 0, 128);
+  // Crée defaultTask (LED qui clignote) en priorité normale
+  osThreadDef(defaultTask, StartDefaultTask, osPriorityNormal, 0, 128);
   defaultTaskHandle = osThreadCreate(osThread(defaultTask), NULL);
 
   /* USER CODE BEGIN RTOS_THREADS */
   /* add threads, ... */
    /* Création de la tâche taskGive */
-   // Créer la tâche qui donne le sémaphore en priorité haute
-   osThreadDef(taskGive, StartTaskGive, osPriorityAboveNormal, 0, 128);
-   osThreadCreate(osThread(taskGive), NULL);
+  // Crée taskGive (donne la notification) en priorité haute
+  osThreadDef(taskGive, StartTaskGive, osPriorityAboveNormal, 0, 128);
+  taskGiveHandle = osThreadCreate(osThread(taskGive), NULL);
 
    /* Création de la tâche taskTake */
-   // Créer la tâche qui prend le sémaphore en priorité normale
-   osThreadDef(taskTake, StartTaskTake, osPriorityNormal, 0, 128);
-   osThreadCreate(osThread(taskTake), NULL);
-
+   // Crée taskTake (attend la notification) en priorité basse
+   osThreadDef(taskTake, StartTaskTake, osPriorityBelowNormal, 0, 128);
+   taskTakeHandle = osThreadCreate(osThread(taskTake), NULL);
 
 
   /* USER CODE END RTOS_THREADS */
@@ -161,58 +166,46 @@ void StartDefaultTask(void const * argument)
 
 /* Private application code --------------------------------------------------*/
 /* USER CODE BEGIN Application */
+
 void StartTaskGive(void const * argument)
 {
   uint32_t delay_time = 100; // Temps initial en ms
 
   for(;;)
   {
-    printf("[taskGive] Avant de donner le semaphore.\r\n");
+    printf("[taskGive] Avant d'envoyer la notification.\r\n");
 
-    osSemaphoreRelease(myBinarySemHandle);
+    xTaskNotifyGive(taskTakeHandle); // Notification envoyée à taskTake
 
-    printf("[taskGive] Semaphore donne.\r\n");
+    printf("[taskGive] Notification envoyee.\r\n");
 
-    osDelay(delay_time / portTICK_PERIOD_MS); // Attendre delay_time millisecondes
-
-    delay_time += 100; // Ajouter 100ms à chaque itération
+    osDelay(delay_time / portTICK_PERIOD_MS);
+    delay_time += 100;
   }
 }
+
 
 void StartTaskTake(void const * argument)
 {
-  /* Important : Attendre un peu avant de commencer */
-  osDelay(200); // 200 ms pour laisser taskGive démarrer
-
   for(;;)
   {
-    printf("[taskTake] Avant de prendre le semaphore.\r\n");
+    printf("[taskTake] Avant de recevoir la notification.\r\n");
 
-    int32_t result = osSemaphoreWait(myBinarySemHandle, 1000); // 1000 ms timeout
+    // Attend la notification pendant 1000 ms (1 seconde)
+    uint32_t result = ulTaskNotifyTake(pdTRUE, pdMS_TO_TICKS(1000));
 
     if(result > 0)
     {
-      printf("[taskTake] Semaphore pris avec succes.\r\n");
-    }
-    else if(result == 0)
-    {
-      printf("[taskTake] ERREUR: Timeout lors de l'attente du semaphore ! RESET.\r\n");
-
-      // Attendre que l'UART ait fini d'envoyer
-      while(HAL_UART_GetState(&huart1) != HAL_UART_STATE_READY)
-      {
-      }
-      HAL_Delay(50);
-
-      NVIC_SystemReset();
+      printf("[taskTake] Notification recue avec succes.\r\n");
     }
     else
     {
-      printf("[taskTake] ERREUR: Probleme avec osSemaphoreWait().\r\n");
+      printf("[taskTake] ERREUR: Timeout lors de l'attente de la notification ! RESET.\r\n");
+      HAL_Delay(100); // Petit délai pour que UART termine
+      NVIC_SystemReset();
     }
   }
 }
-
 
 /* USER CODE END Application */
 

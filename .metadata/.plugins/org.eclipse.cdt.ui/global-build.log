@@ -1,31 +1,38 @@
-11:02:26 **** Incremental Build of configuration Debug for project TP_FreeRTOS ****
+11:59:18 **** Incremental Build of configuration Debug for project TP_FreeRTOS ****
 make -j16 all 
 arm-none-eabi-gcc "../Core/Src/freertos.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1 -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/freertos.d" -MT"Core/Src/freertos.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/freertos.o"
 ../Core/Src/freertos.c: In function 'StartTaskGive':
-../Core/Src/freertos.c:170:5: warning: implicit declaration of function 'printf' [-Wimplicit-function-declaration]
-  170 |     printf("[taskGive] Avant de donner le semaphore.\r\n");
+../Core/Src/freertos.c:176:5: warning: implicit declaration of function 'printf' [-Wimplicit-function-declaration]
+  176 |     printf("[taskGive] Avant d'envoyer la notification.\r\n");
       |     ^~~~~~
 ../Core/Src/freertos.c:26:1: note: include '<stdio.h>' or provide a declaration of 'printf'
    25 | #include "usart.h"
   +++ |+#include <stdio.h>
    26 | 
-../Core/Src/freertos.c:170:5: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
-  170 |     printf("[taskGive] Avant de donner le semaphore.\r\n");
+../Core/Src/freertos.c:176:5: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
+  176 |     printf("[taskGive] Avant d'envoyer la notification.\r\n");
       |     ^~~~~~
-../Core/Src/freertos.c:170:5: note: include '<stdio.h>' or provide a declaration of 'printf'
+../Core/Src/freertos.c:176:5: note: include '<stdio.h>' or provide a declaration of 'printf'
 ../Core/Src/freertos.c: In function 'StartTaskTake':
-../Core/Src/freertos.c:189:5: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
-  189 |     printf("[taskTake] Avant de prendre le semaphore.\r\n");
+../Core/Src/freertos.c:192:5: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
+  192 |     printf("[taskTake] Avant de recevoir la notification.\r\n");
       |     ^~~~~~
-../Core/Src/freertos.c:189:5: note: include '<stdio.h>' or provide a declaration of 'printf'
+../Core/Src/freertos.c:192:5: note: include '<stdio.h>' or provide a declaration of 'printf'
 arm-none-eabi-gcc -o "TP_FreeRTOS.elf" @"objects.list"   -mcpu=cortex-m7 -T"C:\Users\debor\OneDrive\Desktop\ENSEA\ENSEA_24-25\Semestre_10\Noyau_temps_reel\FreeRTOS\TP_FreeRTOS\STM32F746NGHX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TP_FreeRTOS.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 Finished building target: TP_FreeRTOS.elf
  
 arm-none-eabi-size  TP_FreeRTOS.elf 
 arm-none-eabi-objdump -h -S TP_FreeRTOS.elf  > "TP_FreeRTOS.list"
    text	   data	    bss	    dec	    hex	filename
-  27400	    108	  18340	  45848	   b318	TP_FreeRTOS.elf
+  22816	    108	  18340	  41264	   a130	TP_FreeRTOS.elf
 Finished building: default.size.stdout
  
 Finished building: TP_FreeRTOS.list
+ 
+12:38:03 **** Incremental Build of configuration Debug for project TP_FreeRTOS ****
+make -j16 all 
+arm-none-eabi-size  TP_FreeRTOS.elf 
+   text	   data	    bss	    dec	    hex	filename
+  22816	    108	  18340	  41264	   a130	TP_FreeRTOS.elf
+Finished building: default.size.stdout
  
