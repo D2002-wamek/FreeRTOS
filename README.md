@@ -207,7 +207,7 @@ Le mutex s'assure que lorsque la première tâche utilise printf, la deuxième d
 
 # 2 On joue avec le Shell
 
-
+1. Créer le projet, compiler et observer ( voir commit)
 
 
 
