@@ -198,10 +198,16 @@ ____________________________________________________
 
 # 1.5 Réentrance et exclusion mutuelle
 9. Recopiez le code ci-dessus – au bon endroit – dans votre code.
+
 10. Observez attentivement la sortie dans la console. Expliquez d’où vient le problème.
-Ce comportement indique que de nouvelles tâches taskTake et taskGive semblent s'exécuter en boucle, alors que dans ta version précédente, elles s'exécutaient une seule     fois et se suspendaient. Ces deux tâches (Tache 1 et Tache 2) écrivent en même temps dans la console UART via printf(), ce qui cause :
-Des messages corrompus ou mélangés . Une surcharge du port série, car les deux tâches ont des delays très courts (1 et 2 ticks ≈ 1 à 2 ms).
-Une compétition d’accès au printf(), qui utilise USART (périphérique partagé).
+Ce comportement indique que de nouvelles tâches taskTake et taskGive semblent s'exécuter en boucle, alors que dans ta version précédente, elles s'exécutaient une seule     fois et se suspendaient. Ces tâches écrivent en même temps dans la console UART via printf(), ce qui cause des messages corrompus ou mélangés et surcharge le port série, car les  tâches ont des delays très courts par conséquence une compétition d’accès au printf(), qui utilise USART.
+
+11. Proposez une solution en utilisant un sémaphore Mutex (voir commit)
+Le mutex s'assure que lorsque la première tâche utilise printf, la deuxième doit attendre que la tâche 1 ait terminé avant de pouvoir utiliser printf, et vice-versa. Cela empêche l'interférence entre les appels à printf et garantit que les messages de sortie ne seront pas mélangés.
+
+# 2 On joue avec le Shell
+
+
 
 
 
