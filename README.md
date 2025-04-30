@@ -220,6 +220,21 @@ int fonction(h_shell_t * h_shell, int argc, char ** argv)
 
 1.3 Expliquer les mécanismes qui mènent à l’exécution de la fonction
 
+[Utilisateur tape "f" + Entrée]
+            ↓
+ [USART1 reçoit chaque caractère]
+            ↓
+ [Interruption → drv_uart1_receive()]
+            ↓
+ [Shell → shell_run()]
+            ↓
+ [Commande 'f' détectée → fonction appelée]
+            ↓
+ [Message préparé → transmis via UART1]
+            ↓
+ [Message affiché dans le terminal]
+
+La fonction fonction() est exécutée lorsque l’utilisateur tape f dans le terminal, grâce au système de shell embarqué. Celui-ci associe chaque lettre à une fonction définie à l’avance via shell_add(). Une fois la commande reçue, la fonction est appelée avec les bons arguments, et le résultat est envoyé à l’UART pour affichage.
 
 
 
