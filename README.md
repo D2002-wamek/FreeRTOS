@@ -202,8 +202,7 @@ ____________________________________________________
     Ce comportement indique que de nouvelles tâches taskTake et taskGive semblent s'exécuter en boucle,
     alors que dans ta version précédente, elles s'exécutaient une seule     fois et se suspendaient.
     Ces deux tâches (Tache 1 et Tache 2) écrivent en même temps dans la console UART via printf(), ce qui cause :
-Des messages corrompus ou mélangés (ex: Je skTake] Valeur recue:).
-Une surcharge du port série, car les deux tâches ont des delays très courts (1 et 2 ticks ≈ 1 à 2 ms).
+Des messages corrompus ou mélangés . Une surcharge du port série, car les deux tâches ont des delays très courts (1 et 2 ticks ≈ 1 à 2 ms).
 Une compétition d’accès au printf(), qui utilise USART (périphérique partagé).
 
 
