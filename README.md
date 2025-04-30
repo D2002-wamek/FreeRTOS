@@ -207,7 +207,19 @@ Le mutex s'assure que lorsque la première tâche utilise printf, la deuxième d
 
 # 2 On joue avec le Shell
 
-1. Créer le projet, compiler et observer ( voir commit)
+1
+ 
+1.2 Modifier la fonction pour faire apparaître la liste des arguments
+
+int fonction(h_shell_t * h_shell, int argc, char ** argv)
+{
+	int size = snprintf (h_shell->print_buffer, BUFFER_SIZE, "Je suis une fonction bidon\r\n");
+	h_shell->drv.transmit(h_shell->print_buffer, size);
+
+	return 0;
+
+1.3 Expliquer les mécanismes qui mènent à l’exécution de la fonction
+
 
 
 
