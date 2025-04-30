@@ -1,0 +1,202 @@
+/* USER CODE BEGIN Header */
+/**
+  ******************************************************************************
+  * File Name          : freertos.c
+  * Description        : Code for freertos applications
+  ******************************************************************************
+  * @attention
+  *
+  * Copyright (c) 2025 STMicroelectronics.
+  * All rights reserved.
+  *
+  * This software is licensed under terms that can be found in the LICENSE file
+  * in the root directory of this software component.
+  * If no LICENSE file comes with this software, it is provided AS-IS.
+  *
+  ******************************************************************************
+  */
+/* USER CODE END Header */
+
+/* Includes ------------------------------------------------------------------*/
+#include "FreeRTOS.h"
+#include "task.h"
+#include "queue.h"
+#include "main.h"
+#include "usart.h"
+#include "gpio.h"
+
+/* Private includes ----------------------------------------------------------*/
+/* USER CODE BEGIN Includes */
+
+/* USER CODE END Includes */
+
+/* Private typedef -----------------------------------------------------------*/
+/* USER CODE BEGIN PTD */
+
+/* USER CODE END PTD */
+
+/* Private define ------------------------------------------------------------*/
+/* USER CODE BEGIN PD */
+
+/* USER CODE END PD */
+
+/* Private macro -------------------------------------------------------------*/
+/* USER CODE BEGIN PM */
+
+/* USER CODE END PM */
+
+/* Private variables ---------------------------------------------------------*/
+/* USER CODE BEGIN Variables */
+
+/* Déclaration des handles */
+TaskHandle_t defaultTaskHandle;
+TaskHandle_t taskGiveHandle;
+TaskHandle_t taskTakeHandle;
+QueueHandle_t myQueueHandle;
+
+
+/* USER CODE END Variables */
+
+/* Private function prototypes -----------------------------------------------*/
+/* USER CODE BEGIN FunctionPrototypes */
+void StartDefaultTask(void *argument);
+void StartTaskGive(void *argument);
+void StartTaskTake(void *argument);
+
+/* USER CODE END FunctionPrototypes */
+
+void MX_FREERTOS_Init(void); /* (MISRA C 2004 rule 8.1) */
+
+/* GetIdleTaskMemory prototype (linked to static allocation support) */
+void vApplicationGetIdleTaskMemory( StaticTask_t **ppxIdleTaskTCBBuffer, StackType_t **ppxIdleTaskStackBuffer, uint32_t *pulIdleTaskStackSize );
+
+/* USER CODE BEGIN GET_IDLE_TASK_MEMORY */
+static StaticTask_t xIdleTaskTCBBuffer;
+static StackType_t xIdleStack[configMINIMAL_STACK_SIZE];
+
+void vApplicationGetIdleTaskMemory( StaticTask_t **ppxIdleTaskTCBBuffer, StackType_t **ppxIdleTaskStackBuffer, uint32_t *pulIdleTaskStackSize )
+{
+  *ppxIdleTaskTCBBuffer = &xIdleTaskTCBBuffer;
+  *ppxIdleTaskStackBuffer = &xIdleStack[0];
+  *pulIdleTaskStackSize = configMINIMAL_STACK_SIZE;
+  /* place for user code */
+}
+/* USER CODE END GET_IDLE_TASK_MEMORY */
+
+/**
+  * @brief  FreeRTOS initialization
+  * @param  None
+  * @retval None
+  */
+void MX_FREERTOS_Init(void) {
+  /* USER CODE BEGIN Init */
+
+  /* USER CODE END Init */
+
+  /* USER CODE BEGIN RTOS_MUTEX */
+  /* add mutexes, ... */
+  /* USER CODE END RTOS_MUTEX */
+
+  /* USER CODE BEGIN RTOS_SEMAPHORES */
+  /* add semaphores, ... */
+  /* USER CODE END RTOS_SEMAPHORES */
+
+  /* USER CODE BEGIN RTOS_TIMERS */
+  /* start timers, add new ones, ... */
+  /* USER CODE END RTOS_TIMERS */
+
+  /* USER CODE BEGIN RTOS_QUEUES */
+  /* add queues, ... */
+  /* Création de la queue (10 éléments de type uint32_t) */
+  myQueueHandle = xQueueCreate(10, sizeof(uint32_t));
+   if (myQueueHandle == NULL)
+	  {
+	    printf("ERREUR: Echec creation de la queue !\r\n");
+	    while (1); // Erreur fatale
+	  }
+  /* USER CODE END RTOS_QUEUES */
+
+  /* Create the thread(s) */
+  xTaskCreate(StartDefaultTask, "defaultTask", 128, NULL, 2, &defaultTaskHandle);
+  /* USER CODE BEGIN RTOS_THREADS */
+  /* add threads, ... */
+  xTaskCreate(StartTaskGive, "taskGive", 128, NULL, 3, &taskGiveHandle);
+  xTaskCreate(StartTaskTake, "taskTake", 128, NULL, 1, &taskTakeHandle);
+  /* USER CODE END RTOS_THREADS */
+
+}
+
+/* USER CODE BEGIN Header_StartDefaultTask */
+/**
+  * @brief  Function implementing the defaultTask thread.
+  * @param  argument: Not used
+  * @retval None
+  */
+/* USER CODE END Header_StartDefaultTask */
+void StartDefaultTask(void *argument)
+{
+  /* USER CODE BEGIN StartDefaultTask */
+  /* Infinite loop */
+	  /*for(;;)
+	  {
+	      HAL_GPIO_TogglePin(GPIOI, GPIO_PIN_1);
+	      printf("LED change d'etat\r\n");
+	      vTaskDelay(pdMS_TO_TICKS(100));
+	  }*/
+	  for (int i = 0; i < 5; i++)
+	    {
+	      HAL_GPIO_TogglePin(GPIOI, GPIO_PIN_1);
+	      printf("LED change d'etat (%d)\r\n", i + 1);
+	      vTaskDelay(pdMS_TO_TICKS(100));
+	    }
+
+  /* USER CODE END StartDefaultTask */
+	  vTaskDelete(NULL);
+}
+
+/* Private application code --------------------------------------------------*/
+/* USER CODE BEGIN Application */
+/* Tâche qui envoie dans la queue */
+void StartTaskGive(void *argument)
+{
+  uint32_t delay_time = 100;
+
+  printf("[taskGive] Avant envoi dans la queue.\r\n");
+
+  if (xQueueSend(myQueueHandle, &delay_time, pdMS_TO_TICKS(100)) == pdPASS)
+  {
+    printf("[taskGive] Valeur %lu envoyee avec succes.\r\n", delay_time);
+  }
+  else
+  {
+    printf("[taskGive] ERREUR: Envoi dans queue echoue.\r\n");
+  }
+
+  // Suspend la tâche définitivement
+  vTaskSuspend(NULL);
+}
+
+
+/* Tâche qui reçoit depuis la queue */
+void StartTaskTake(void *argument)
+{
+  uint32_t received_value;
+
+  printf("[taskTake] En attente d'une valeur dans la queue...\r\n");
+
+  if (xQueueReceive(myQueueHandle, &received_value, pdMS_TO_TICKS(1000)) == pdPASS)
+  {
+    printf("[taskTake] Valeur recue: %lu ms\r\n", received_value);
+  }
+  else
+  {
+    printf("[taskTake] Timeout de reception !\r\n");
+  }
+
+  // Suspend la tâche après réception
+  vTaskSuspend(NULL);
+}
+
+
+/* USER CODE END Application */
+

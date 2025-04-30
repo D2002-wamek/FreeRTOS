@@ -24,6 +24,8 @@
 #include "main.h"
 #include "usart.h"
 #include "gpio.h"
+#include "semphr.h"
+
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
@@ -37,7 +39,11 @@
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
-
+#define STACK_SIZE 256
+#define TASK1_PRIORITY 1
+#define TASK2_PRIORITY 2
+#define TASK1_DELAY 1
+#define TASK2_DELAY 2
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -53,6 +59,8 @@ TaskHandle_t defaultTaskHandle;
 TaskHandle_t taskGiveHandle;
 TaskHandle_t taskTakeHandle;
 QueueHandle_t myQueueHandle;
+BaseType_t ret;
+SemaphoreHandle_t printfMutex;
 
 
 /* USER CODE END Variables */
@@ -62,6 +70,7 @@ QueueHandle_t myQueueHandle;
 void StartDefaultTask(void *argument);
 void StartTaskGive(void *argument);
 void StartTaskTake(void *argument);
+void task_bug (void *pvParameters);
 
 /* USER CODE END FunctionPrototypes */
 
@@ -95,6 +104,13 @@ void MX_FREERTOS_Init(void) {
 
   /* USER CODE BEGIN RTOS_MUTEX */
   /* add mutexes, ... */
+	  printfMutex = xSemaphoreCreateMutex();
+	  if (printfMutex == NULL)
+	  {
+	    printf("ERREUR: Mutex non créé\r\n");
+	    while (1); // Erreur fatale
+	  }
+
   /* USER CODE END RTOS_MUTEX */
 
   /* USER CODE BEGIN RTOS_SEMAPHORES */
@@ -118,6 +134,16 @@ void MX_FREERTOS_Init(void) {
 
   /* Create the thread(s) */
   xTaskCreate(StartDefaultTask, "defaultTask", 128, NULL, 2, &defaultTaskHandle);
+
+
+  ret = xTaskCreate(task_bug, "Tache 1", STACK_SIZE, \
+  (void *) TASK1_DELAY, TASK1_PRIORITY, NULL);
+  configASSERT(pdPASS == ret);
+  ret = xTaskCreate(task_bug, "Tache 2", STACK_SIZE, \
+  (void *) TASK2_DELAY, TASK2_PRIORITY, NULL);
+  configASSERT(pdPASS == ret);
+
+
   /* USER CODE BEGIN RTOS_THREADS */
   /* add threads, ... */
   xTaskCreate(StartTaskGive, "taskGive", 128, NULL, 3, &taskGiveHandle);
@@ -135,44 +161,72 @@ void MX_FREERTOS_Init(void) {
 /* USER CODE END Header_StartDefaultTask */
 void StartDefaultTask(void *argument)
 {
-  /* USER CODE BEGIN StartDefaultTask */
-  /* Infinite loop */
-	  /*for(;;)
-	  {
-	      HAL_GPIO_TogglePin(GPIOI, GPIO_PIN_1);
-	      printf("LED change d'etat\r\n");
-	      vTaskDelay(pdMS_TO_TICKS(100));
-	  }*/
-	  for (int i = 0; i < 5; i++)
-	    {
-	      HAL_GPIO_TogglePin(GPIOI, GPIO_PIN_1);
-	      printf("LED change d'etat (%d)\r\n", i + 1);
-	      vTaskDelay(pdMS_TO_TICKS(100));
-	    }
+  for (int i = 0; i < 5; i++)
+  {
+    HAL_GPIO_TogglePin(GPIOI, GPIO_PIN_1);
 
-  /* USER CODE END StartDefaultTask */
-	  vTaskDelete(NULL);
+    if (xSemaphoreTake(printfMutex, portMAX_DELAY) == pdPASS)
+    {
+      printf("LED change d'etat (%d)\r\n", i + 1);
+      xSemaphoreGive(printfMutex);
+    }
+
+    vTaskDelay(pdMS_TO_TICKS(100));
+  }
+
+  vTaskDelete(NULL);
 }
+
 
 /* Private application code --------------------------------------------------*/
 /* USER CODE BEGIN Application */
+
+void task_bug(void * pvParameters)
+{
+    int delay = (int) pvParameters;
+
+    if (xSemaphoreTake(printfMutex, portMAX_DELAY) == pdPASS)
+    {
+        printf("Je suis %s et je m'endors pour %d ticks\r\n",
+               pcTaskGetName(NULL), delay);
+        xSemaphoreGive(printfMutex);
+    }
+
+    vTaskDelay(delay); // éventuellement tu peux le retirer si inutile
+
+    // Supprimer la tâche après affichage
+    vTaskDelete(NULL);
+}
+
+
 /* Tâche qui envoie dans la queue */
 void StartTaskGive(void *argument)
 {
   uint32_t delay_time = 100;
 
-  printf("[taskGive] Avant envoi dans la queue.\r\n");
+  if (xSemaphoreTake(printfMutex, portMAX_DELAY) == pdPASS)
+  {
+    printf("[taskGive] Avant envoi dans la queue.\r\n");
+    xSemaphoreGive(printfMutex);
+  }
 
   if (xQueueSend(myQueueHandle, &delay_time, pdMS_TO_TICKS(100)) == pdPASS)
   {
-    printf("[taskGive] Valeur %lu envoyee avec succes.\r\n", delay_time);
+    if (xSemaphoreTake(printfMutex, portMAX_DELAY) == pdPASS)
+    {
+      printf("[taskGive] Valeur %lu envoyee avec succes.\r\n", delay_time);
+      xSemaphoreGive(printfMutex);
+    }
   }
   else
   {
-    printf("[taskGive] ERREUR: Envoi dans queue echoue.\r\n");
+    if (xSemaphoreTake(printfMutex, portMAX_DELAY) == pdPASS)
+    {
+      printf("[taskGive] ERREUR: Envoi dans queue echoue.\r\n");
+      xSemaphoreGive(printfMutex);
+    }
   }
 
-  // Suspend la tâche définitivement
   vTaskSuspend(NULL);
 }
 
@@ -182,21 +236,31 @@ void StartTaskTake(void *argument)
 {
   uint32_t received_value;
 
-  printf("[taskTake] En attente d'une valeur dans la queue...\r\n");
+  if (xSemaphoreTake(printfMutex, portMAX_DELAY) == pdPASS)
+  {
+    printf("[taskTake] En attente d'une valeur dans la queue...\r\n");
+    xSemaphoreGive(printfMutex);
+  }
 
   if (xQueueReceive(myQueueHandle, &received_value, pdMS_TO_TICKS(1000)) == pdPASS)
   {
-    printf("[taskTake] Valeur recue: %lu ms\r\n", received_value);
+    if (xSemaphoreTake(printfMutex, portMAX_DELAY) == pdPASS)
+    {
+      printf("[taskTake] Valeur recue: %lu ms\r\n", received_value);
+      xSemaphoreGive(printfMutex);
+    }
   }
   else
   {
-    printf("[taskTake] Timeout de reception !\r\n");
+    if (xSemaphoreTake(printfMutex, portMAX_DELAY) == pdPASS)
+    {
+      printf("[taskTake] Timeout de reception !\r\n");
+      xSemaphoreGive(printfMutex);
+    }
   }
 
-  // Suspend la tâche après réception
   vTaskSuspend(NULL);
 }
-
 
 /* USER CODE END Application */
 

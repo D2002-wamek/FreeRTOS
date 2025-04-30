@@ -1,55 +1,80 @@
-10:09:14 **** Incremental Build of configuration Debug for project TP_FreeRTOS ****
+12:44:57 **** Incremental Build of configuration Debug for project TP_FreeRTOS ****
 make -j16 all 
 arm-none-eabi-gcc "../Core/Src/freertos.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1 -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/freertos.d" -MT"Core/Src/freertos.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/freertos.o"
 ../Core/Src/freertos.c: In function 'MX_FREERTOS_Init':
-../Core/Src/freertos.c:114:13: warning: implicit declaration of function 'printf' [-Wimplicit-function-declaration]
-  114 |             printf("ERREUR: Echec creation de la queue !\r\n");
+../Core/Src/freertos.c:110:13: warning: implicit declaration of function 'printf' [-Wimplicit-function-declaration]
+  110 |             printf("ERREUR: Mutex non créé\r\n");
       |             ^~~~~~
-../Core/Src/freertos.c:27:1: note: include '<stdio.h>' or provide a declaration of 'printf'
-   26 | #include "gpio.h"
+../Core/Src/freertos.c:28:1: note: include '<stdio.h>' or provide a declaration of 'printf'
+   27 | #include "semphr.h"
   +++ |+#include <stdio.h>
-   27 | 
-../Core/Src/freertos.c:114:13: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
-  114 |             printf("ERREUR: Echec creation de la queue !\r\n");
+   28 | 
+../Core/Src/freertos.c:110:13: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
+  110 |             printf("ERREUR: Mutex non créé\r\n");
       |             ^~~~~~
-../Core/Src/freertos.c:114:13: note: include '<stdio.h>' or provide a declaration of 'printf'
+../Core/Src/freertos.c:110:13: note: include '<stdio.h>' or provide a declaration of 'printf'
+../Core/Src/freertos.c:130:13: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
+  130 |             printf("ERREUR: Echec creation de la queue !\r\n");
+      |             ^~~~~~
+../Core/Src/freertos.c:130:13: note: include '<stdio.h>' or provide a declaration of 'printf'
 ../Core/Src/freertos.c: In function 'StartDefaultTask':
-../Core/Src/freertos.c:149:15: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
-  149 |               printf("LED change d'etat (%d)\r\n", i + 1);
-      |               ^~~~~~
-../Core/Src/freertos.c:149:15: note: include '<stdio.h>' or provide a declaration of 'printf'
+../Core/Src/freertos.c:170:7: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
+  170 |       printf("LED change d'etat (%d)\r\n", i + 1);
+      |       ^~~~~~
+../Core/Src/freertos.c:170:7: note: include '<stdio.h>' or provide a declaration of 'printf'
+../Core/Src/freertos.c: In function 'task_bug':
+../Core/Src/freertos.c:190:9: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
+  190 |         printf("Je suis %s et je m'endors pour %d ticks\r\n",
+      |         ^~~~~~
+../Core/Src/freertos.c:190:9: note: include '<stdio.h>' or provide a declaration of 'printf'
 ../Core/Src/freertos.c: In function 'StartTaskGive':
-../Core/Src/freertos.c:164:3: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
-  164 |   printf("[taskGive] Avant envoi dans la queue.\r\n");
-      |   ^~~~~~
-../Core/Src/freertos.c:164:3: note: include '<stdio.h>' or provide a declaration of 'printf'
+../Core/Src/freertos.c:209:5: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
+  209 |     printf("[taskGive] Avant envoi dans la queue.\r\n");
+      |     ^~~~~~
+../Core/Src/freertos.c:209:5: note: include '<stdio.h>' or provide a declaration of 'printf'
+../Core/Src/freertos.c:217:7: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
+  217 |       printf("[taskGive] Valeur %lu envoyee avec succes.\r\n", delay_time);
+      |       ^~~~~~
+../Core/Src/freertos.c:217:7: note: include '<stdio.h>' or provide a declaration of 'printf'
+../Core/Src/freertos.c:225:7: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
+  225 |       printf("[taskGive] ERREUR: Envoi dans queue echoue.\r\n");
+      |       ^~~~~~
+../Core/Src/freertos.c:225:7: note: include '<stdio.h>' or provide a declaration of 'printf'
 ../Core/Src/freertos.c: In function 'StartTaskTake':
-../Core/Src/freertos.c:185:3: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
-  185 |   printf("[taskTake] En attente d'une valeur dans la queue...\r\n");
-      |   ^~~~~~
-../Core/Src/freertos.c:185:3: note: include '<stdio.h>' or provide a declaration of 'printf'
+../Core/Src/freertos.c:241:5: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
+  241 |     printf("[taskTake] En attente d'une valeur dans la queue...\r\n");
+      |     ^~~~~~
+../Core/Src/freertos.c:241:5: note: include '<stdio.h>' or provide a declaration of 'printf'
+../Core/Src/freertos.c:249:7: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
+  249 |       printf("[taskTake] Valeur recue: %lu ms\r\n", received_value);
+      |       ^~~~~~
+../Core/Src/freertos.c:249:7: note: include '<stdio.h>' or provide a declaration of 'printf'
+../Core/Src/freertos.c:257:7: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
+  257 |       printf("[taskTake] Timeout de reception !\r\n");
+      |       ^~~~~~
+../Core/Src/freertos.c:257:7: note: include '<stdio.h>' or provide a declaration of 'printf'
 arm-none-eabi-gcc -o "TP_FreeRTOS.elf" @"objects.list"   -mcpu=cortex-m7 -T"C:\Users\debor\OneDrive\Desktop\ENSEA\ENSEA_24-25\Semestre_10\Noyau_temps_reel\FreeRTOS\TP_FreeRTOS\STM32F746NGHX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TP_FreeRTOS.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 Finished building target: TP_FreeRTOS.elf
  
 arm-none-eabi-size  TP_FreeRTOS.elf 
 arm-none-eabi-objdump -h -S TP_FreeRTOS.elf  > "TP_FreeRTOS.list"
    text	   data	    bss	    dec	    hex	filename
-  27052	    108	  18348	  45508	   b1c4	TP_FreeRTOS.elf
+  29060	    108	  18356	  47524	   b9a4	TP_FreeRTOS.elf
 Finished building: default.size.stdout
  
 Finished building: TP_FreeRTOS.list
  
-10:09:45 **** Incremental Build of configuration Debug for project TP_FreeRTOS ****
+12:45:03 **** Incremental Build of configuration Debug for project TP_FreeRTOS ****
 make -j16 all 
 arm-none-eabi-size  TP_FreeRTOS.elf 
    text	   data	    bss	    dec	    hex	filename
-  27052	    108	  18348	  45508	   b1c4	TP_FreeRTOS.elf
+  29060	    108	  18356	  47524	   b9a4	TP_FreeRTOS.elf
 Finished building: default.size.stdout
  
-10:46:57 **** Incremental Build of configuration Debug for project TP_FreeRTOS ****
+12:46:05 **** Incremental Build of configuration Debug for project TP_FreeRTOS ****
 make -j16 all 
 arm-none-eabi-size  TP_FreeRTOS.elf 
    text	   data	    bss	    dec	    hex	filename
-  27052	    108	  18348	  45508	   b1c4	TP_FreeRTOS.elf
+  29060	    108	  18356	  47524	   b9a4	TP_FreeRTOS.elf
 Finished building: default.size.stdout
  
