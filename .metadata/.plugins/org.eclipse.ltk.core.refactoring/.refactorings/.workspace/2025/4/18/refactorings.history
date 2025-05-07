@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Delete resource &apos;rtos_td_shell&apos;" deleteContents="false" description="Delete resource &apos;rtos_td_shell&apos;" element1="/rtos_td_shell" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1746015308768"/>&#x0A;<refactoring comment="Delete resource &apos;rtos_td_shell&apos;" deleteContents="true" description="Delete resource &apos;rtos_td_shell&apos;" element1="/rtos_td_shell" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1746018067724"/>
+</session>
